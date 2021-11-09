@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/gachigagae/static/js/main.1a002e5d.chunk.js",
-    "main.js.map": "/gachigagae/static/js/main.1a002e5d.chunk.js.map",
+    "main.js": "/gachigagae/static/js/main.6c51c2ed.chunk.js",
+    "main.js.map": "/gachigagae/static/js/main.6c51c2ed.chunk.js.map",
     "runtime-main.js": "/gachigagae/static/js/runtime-main.340e47a2.js",
     "runtime-main.js.map": "/gachigagae/static/js/runtime-main.340e47a2.js.map",
-    "static/js/2.8c8ed418.chunk.js": "/gachigagae/static/js/2.8c8ed418.chunk.js",
-    "static/js/2.8c8ed418.chunk.js.map": "/gachigagae/static/js/2.8c8ed418.chunk.js.map",
+    "static/js/2.06e74cf6.chunk.js": "/gachigagae/static/js/2.06e74cf6.chunk.js",
+    "static/js/2.06e74cf6.chunk.js.map": "/gachigagae/static/js/2.06e74cf6.chunk.js.map",
     "static/js/3.cb27610d.chunk.js": "/gachigagae/static/js/3.cb27610d.chunk.js",
     "static/js/3.cb27610d.chunk.js.map": "/gachigagae/static/js/3.cb27610d.chunk.js.map",
     "index.html": "/gachigagae/index.html",
-    "static/js/2.8c8ed418.chunk.js.LICENSE.txt": "/gachigagae/static/js/2.8c8ed418.chunk.js.LICENSE.txt"
+    "static/js/2.06e74cf6.chunk.js.LICENSE.txt": "/gachigagae/static/js/2.06e74cf6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.340e47a2.js",
-    "static/js/2.8c8ed418.chunk.js",
-    "static/js/main.1a002e5d.chunk.js"
+    "static/js/2.06e74cf6.chunk.js",
+    "static/js/main.6c51c2ed.chunk.js"
   ]
 }
