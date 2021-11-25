@@ -52,12 +52,12 @@ const MContainer = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
   width: 100%;
-  height: 3.6rem;
+  height: 5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: 2.3em;
-  line-height: 3.6rem;
+  font-size: 3.5em;
+  line-height: 5rem;
   .MainVer {
     font-size: 0.59em;
     color: black;

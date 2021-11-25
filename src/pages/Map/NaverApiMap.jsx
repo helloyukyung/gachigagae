@@ -46,7 +46,7 @@ export default function NaverApiMap({
           defaultCenter={
             new navermaps.LatLng(37.2840915640963, 127.012674868847)
           }
-          defaultZoom={16}
+          defaultZoom={17}
         >
           <MobileView>
             {mobileData?.map((marker) => (
@@ -64,8 +64,8 @@ export default function NaverApiMap({
                 animation={0}
                 icon={{
                   url: "https://i.ibb.co/JBMG7b9/marker.png",
-                  size: { width: 44, height: 50 },
-                  scaledSize: { width: 44, height: 50 },
+                  size: { width: 80, height: 86 },
+                  scaledSize: { width: 90, height: 96 },
                   // anchor: { x: 12, y: 32 },
                 }}
               />

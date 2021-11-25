@@ -71,7 +71,7 @@ export default function DetailList({
   return (
     <>
       <MobileView>
-        <Container>
+        <Container Mobile>
           <DetailNav Mobile>
             <StylesProvider injectFirst>
               <BackIcon
@@ -90,7 +90,7 @@ export default function DetailList({
             image5={detail.image5}
           />
           <InfoInfo Mobile>
-            <Info>
+            <Info Mobile>
               <div className="barHeadName">
                 <b className="InfoShopName">{detail.name}</b>
                 <br />
@@ -117,7 +117,7 @@ export default function DetailList({
               )}
             </Info>
             <MenuDiv>Menu</MenuDiv>
-            <Table>
+            <Table Mobile>
               <Tablediv Mobile>
                 <tr className="Menuheader">
                   <th>Coffee</th>
@@ -129,10 +129,14 @@ export default function DetailList({
                       <td>
                         {menu.name}
                         {!!menu.is_main && (
-                          <MenuBadge color="#ff9966">메인메뉴</MenuBadge>
+                          <MenuBadge Mobile color="#ff9966">
+                            메인메뉴
+                          </MenuBadge>
                         )}
                         {!!menu.is_popular && (
-                          <MenuBadge color="#ffe680">인기메뉴</MenuBadge>
+                          <MenuBadge Mobile color="#ffe680">
+                            인기메뉴
+                          </MenuBadge>
                         )}
                       </td>
                     ) : null}
@@ -141,7 +145,7 @@ export default function DetailList({
                 ))}
               </Tablediv>
             </Table>
-            <Table>
+            <Table Mobile>
               <Tablediv Mobile>
                 <tr className="Menuheader">
                   <th>Dessert</th>
@@ -153,10 +157,14 @@ export default function DetailList({
                       <td>
                         {menu.name}
                         {!!menu.is_main && (
-                          <MenuBadge color="#ff9966">메인메뉴</MenuBadge>
+                          <MenuBadge Mobile color="#ff9966">
+                            메인메뉴
+                          </MenuBadge>
                         )}
                         {!!menu.is_popular && (
-                          <MenuBadge color="#ffe680">인기메뉴</MenuBadge>
+                          <MenuBadge Mobile color="#ffe680">
+                            인기메뉴
+                          </MenuBadge>
                         )}
                       </td>
                     ) : null}

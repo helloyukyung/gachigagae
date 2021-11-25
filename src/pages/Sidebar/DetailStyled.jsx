@@ -62,7 +62,6 @@ export const InfoInfo = styled.div`
   flex-direction: column;
   align-items: center;
   left: ${(props) => (props.Mobile ? "2.6%" : "16px")};
-
   bottom: 0;
   top: 15em;
   width: ${(props) => (props.Mobile ? "95%" : "400px")};
@@ -76,6 +75,7 @@ export const Info = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  font-size: ${(props) => (props.Mobile ? "2.5em" : "20px")};
   .barHeadName {
     font-size: 26px;
   }
@@ -106,6 +106,7 @@ export const Table = styled.table`
   border-collapse: collapse; // 선없애기
   /* border-style: hidden; */
   width: 80%;
+  font-size: ${(props) => (props.Mobile ? "2.3em" : "20px")};
   .Menuheader {
     padding: 2px;
     padding-right: 5px;
@@ -144,23 +145,8 @@ export const PhotoImg = styled.img`
   height: 270px;
 `;
 
-export const Ul = styled.ul`
-  list-style: none;
-  padding: 0px;
-  margin: 2px;
-  margin-right: 10px;
-`;
-export const Li = styled.li`
-  list-style: none;
-  padding-left: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 export const MenuBadge = styled.span`
-  font-size: 17px;
+  font-size: ${(props) => (props.Mobile ? "0.9em" : "17px")};
   padding: 3px;
   margin: 2px;
   border-radius: 6px;

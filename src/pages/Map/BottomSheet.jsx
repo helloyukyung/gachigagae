@@ -8,10 +8,11 @@ const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
   width: 100%;
-  height: 100%;
+  height: 30rem;
   display: flex;
+  align-items: center;
   padding: 0.5em;
-  font-size: 1.3em;
+  font-size: 2.5em;
 `;
 
 const Info = styled.div`
@@ -20,6 +21,7 @@ const Info = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 70%;
+  height: 100%;
   .name-score {
     display: flex;
   }
@@ -85,8 +87,8 @@ export default function BottomSheet({ markerId }) {
           className="phoneImage"
           alt={bottomDetail.id}
           src={bottomDetail.image1}
-          width="30%"
-          height="80%"
+          width="45%"
+          height="100%"
         />
         <Info>
           <div className="info-up">
