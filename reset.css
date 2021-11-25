@@ -134,6 +134,7 @@ body {
   height: 100%;
   width: 100%;
 }
+
 /* marker img hover change
 .imgswap:hover img:"https://i.ibb.co/VxSrXQW/hovermark.png"
 {
@@ -141,4 +142,9 @@ body {
 }
 #my-img:hover {
   content: url("https://i.ibb.co/VxSrXQW/hovermark.png");
+} */
+/* 
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+html {
+  font-family: "Jua", sans-serif;
 } */
