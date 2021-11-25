@@ -65,7 +65,6 @@ function SideList(props) {
             onClick={() => {
               props.setClickDetail(true);
               props.setGetId(shop.shop_id);
-              console.log("shop", shop.shop_id);
             }}
             key={shop.id}
           >

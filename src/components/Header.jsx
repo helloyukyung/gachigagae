@@ -17,14 +17,6 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 20%;
-  .icon {
-    padding-top: 0.3em;
-    font-size: 2.3em;
-    .closeButton {
-      font-size: 1em;
-      font-weight: 1.4em;
-    }
-  }
   .textLeft {
     display: flex;
     flex-direction: row;
@@ -55,6 +47,38 @@ export const Container = styled.div`
     color: black;
   }
 `;
+// Mobile
+const MContainer = styled.div`
+  @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+  font-family: "Jua", sans-serif;
+  width: 100%;
+  height: 3.6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 2.3em;
+  line-height: 3.6rem;
+  .MainVer {
+    font-size: 0.59em;
+    color: black;
+    padding-top: 0.5em;
+  }
+  .icon {
+    padding-top: 0.2em;
+    font-size: 1em;
+    .closeButton {
+      font-size: 1em;
+      font-weight: 1.5em;
+    }
+  }
+`;
+const Main = styled.div`
+  padding-top: 0.1em;
+  .main {
+    text-decoration-line: none;
+    color: white;
+  }
+`;
 
 export default function Header({ setClickDetail, setIsMarker }) {
   const [iconShow, setIconShow] = useState(false);
@@ -73,31 +97,36 @@ export default function Header({ setClickDetail, setIsMarker }) {
               textoverflow: "ellipsis",
             }}
           >
-            <Container>
+            <MContainer>
               <div className="icon">
-                <nav>
-                  <IconContext.Provider value={{ color: "#fff" }}>
-                    {!iconShow ? (
-                      <Link to="/list">
-                        <FaBars onClick={() => setIconShow(true)} />
-                      </Link>
-                    ) : (
-                      <Link to="/">
-                        <CgClose
-                          className="closeButton"
-                          onClick={() => setIconShow(false)}
-                        />
-                      </Link>
-                    )}
-                  </IconContext.Provider>
-                </nav>
+                <IconContext.Provider value={{ color: "white" }}>
+                  {!iconShow ? (
+                    <Link to="/list">
+                      <FaBars
+                        onClick={() => {
+                          setIconShow(true);
+                          setClickDetail(false);
+                        }}
+                      />
+                    </Link>
+                  ) : (
+                    <Link to="/">
+                      <CgClose
+                        className="closeButton"
+                        onClick={() => setIconShow(false)}
+                      />
+                    </Link>
+                  )}
+                </IconContext.Provider>
               </div>
-              <Link to="/"></Link>
-              <div className="Main" onClick={() => setIconShow(false)}>
-                같이가개🐶
-              </div>
+
+              <Link to="/">
+                <Main onClick={() => setIconShow(false)}>
+                  <span className="main"> 같이가개🐶</span>
+                </Main>
+              </Link>
               <div className="MainVer">v 1.0</div>
-            </Container>
+            </MContainer>
           </Toolbar>
         </AppBar>
       </MobileView>

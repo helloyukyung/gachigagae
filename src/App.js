@@ -27,7 +27,7 @@ function App() {
         <Router>
           <Box>
             <CssBaseline />
-            <Header />
+            <Header setClickDetail={setClickDetail} />
             <Routes>
               <Route
                 path="/"

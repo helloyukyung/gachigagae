@@ -21,7 +21,6 @@ export default function Map({
 
   const shopListURL = "http://sulrae.com/api/shop/";
   useEffect(() => {
-    console.log("map axios");
     const fetchShopList = async () => {
       try {
         setError(null);

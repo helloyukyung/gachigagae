@@ -45,7 +45,6 @@ export default function Sidebar({
   const shopListURL = "http://sulrae.com/api/shop/";
   //get shopList Data
   useEffect(() => {
-    console.log("axios1");
     const fetchShopList = async () => {
       try {
         setError(null);
@@ -93,7 +92,6 @@ export default function Sidebar({
             {/* <Box sx={{ overflow: "auto" }}> */}
             <StylesProvider injectFirst>
               <MyBox>
-                {/* 컨텐츠 량에 따라 스크롤바를 추가할지 자동으로 결정*/}
                 {clickDetail ? (
                   <Detail
                     getId={getId}

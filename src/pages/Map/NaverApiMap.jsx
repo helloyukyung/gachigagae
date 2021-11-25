@@ -55,9 +55,8 @@ export default function NaverApiMap({
                 onClick={() => {
                   setMarkerId(marker.shop_id);
                   setIsMarker(true);
-                  setClickDetail(true);
+                  setClickDetail(false);
                   setState(true);
-                  console.log("marker click");
                 }}
                 position={
                   new navermaps.LatLng(marker.latitude, marker.longitude)
@@ -76,7 +75,6 @@ export default function NaverApiMap({
               open={state}
               onClose={toggleDrawer(false)}
             >
-              {/* {list()} */}
               <BottomSheet markerId={markerId} />
             </Drawer>
           </MobileView>

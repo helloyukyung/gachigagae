@@ -61,17 +61,16 @@ export const InfoInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  left: 18px;
+  left: ${(props) => (props.Mobile ? "2.6%" : "16px")};
 
   bottom: 0;
   top: 15em;
-  width: ${(props) => (props.Mobile ? "100%" : "400px")};
-  height: 230px;
+  width: ${(props) => (props.Mobile ? "95%" : "400px")};
   background-color: white;
 `;
 
 export const Info = styled.div`
-  margin-top: 5px;
+  margin-top: 6px;
   border-bottom: 1px solid #d9d9d9;
   display: flex;
   flex-direction: column;
@@ -106,7 +105,7 @@ export const Tablediv = styled.div`
 export const Table = styled.table`
   border-collapse: collapse; // 선없애기
   /* border-style: hidden; */
-
+  width: 80%;
   .Menuheader {
     padding: 2px;
     padding-right: 5px;

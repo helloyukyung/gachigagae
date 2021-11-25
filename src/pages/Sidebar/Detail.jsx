@@ -35,7 +35,6 @@ export default function DetailList({
 
   //get detail Data
   useEffect(() => {
-    console.log("axios2");
     const fetchShops = async () => {
       try {
         setError(null);

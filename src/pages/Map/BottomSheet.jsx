@@ -28,7 +28,9 @@ const Info = styled.div`
     font-weight: bold;
   }
 `;
-
+const Img = styled.img`
+  border-radius: 10%;
+`;
 const Span = styled.span`
   color: #333333;
   font-size: 1em;
@@ -79,7 +81,7 @@ export default function BottomSheet({ markerId }) {
   return (
     <>
       <Container>
-        <img
+        <Img
           className="phoneImage"
           alt={bottomDetail.id}
           src={bottomDetail.image1}
