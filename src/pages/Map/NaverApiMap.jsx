@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { BottomSheet } from "react-spring-bottom-sheet";
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from "react-naver-maps";
 import { BrowserView, MobileView } from "react-device-detect";
 import Drawer from "@mui/material/Drawer";
@@ -30,6 +30,7 @@ export default function NaverApiMap({
   const [state, setState] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
+    console.log("toggle");
     setState(open);
   };
   const list = () => (
@@ -76,7 +77,8 @@ export default function NaverApiMap({
                   setIsMarker(true);
                   setClickDetail(true);
                   // setShowBottomSheet(true);
-                  toggleDrawer(true);
+
+                  setState(true);
                   console.log("marker click");
                 }}
                 position={
