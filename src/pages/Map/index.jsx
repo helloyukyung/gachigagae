@@ -1,10 +1,11 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-
 import NaverApiMap from "./NaverApiMap";
-
+import { BrowserView, MobileView } from "react-device-detect";
+import { LottieDogDiv } from "../Sidebar/DetailStyled";
+import LotttieDog from "../../components/Lottie/LotttieDog";
+import axios from "axios";
 export default function Map({
   getDataForMarkers,
   setMarkerId,
@@ -12,18 +13,73 @@ export default function Map({
   setIsMarker,
   setShowBottomSheet,
 }) {
+  // shopList Data
+  const [mobileData, setMobileData] = useState(null);
+  // loading & error hooks
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const shopListURL = "http://sulrae.com/api/shop/";
+  useEffect(() => {
+    console.log("map axios");
+    const fetchShopList = async () => {
+      try {
+        setError(null);
+        setMobileData(null);
+        setLoading(true);
+        const response = await axios.get(shopListURL);
+        setMobileData(response.data);
+        console.log(mobileData);
+      } catch (e) {
+        setError(e);
+      }
+      setLoading(false);
+    };
+
+    fetchShopList();
+  }, []);
+
+  if (loading)
+    return (
+      <LottieDogDiv>
+        <LotttieDog />
+        <div className="waiting">잠시만 기다리개</div>
+      </LottieDogDiv>
+    );
+  if (error) return <div>Error</div>;
+  if (!mobileData) return <div>반려동물 허용카페를 찾지 못했다개🐶 </div>;
+
   return (
     <>
-      <Toolbar />
-      <Typography>
-        <NaverApiMap
-          getDataForMarkers={getDataForMarkers}
-          setMarkerId={setMarkerId}
-          setClickDetail={setClickDetail}
-          setIsMarker={setIsMarker}
-          setShowBottomSheet={setShowBottomSheet}
-        ></NaverApiMap>
-      </Typography>
+      <MobileView>
+        <>
+          <Toolbar />
+          <Typography>
+            <NaverApiMap
+              mobileData={mobileData}
+              setMarkerId={setMarkerId}
+              setClickDetail={setClickDetail}
+              setIsMarker={setIsMarker}
+              setShowBottomSheet={setShowBottomSheet}
+            ></NaverApiMap>
+          </Typography>
+        </>
+      </MobileView>
+
+      <BrowserView>
+        <>
+          <Toolbar />
+          <Typography>
+            <NaverApiMap
+              getDataForMarkers={getDataForMarkers}
+              setMarkerId={setMarkerId}
+              setClickDetail={setClickDetail}
+              setIsMarker={setIsMarker}
+              setShowBottomSheet={setShowBottomSheet}
+            ></NaverApiMap>
+          </Typography>
+        </>
+      </BrowserView>
     </>
   );
 }

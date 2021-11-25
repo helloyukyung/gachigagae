@@ -11,8 +11,12 @@ import Detail from "./Detail";
 import { StylesProvider } from "@material-ui/core/styles";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import LotttieDog from "../../components/Lottie/LotttieDog";
+import styled from "styled-components";
 
-// export const drawerWidth = "40vw";
+export const MyDrawer = styled(Drawer)`
+  position: fixed;
+  left: -100%;
+`;
 
 export const drawerWidth = () => {
   if (isMobile) {
@@ -73,41 +77,43 @@ export default function Sidebar({
   return (
     <>
       <MobileView>
-        <Drawer
-          variant="permanent"
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            [`& .MuiDrawer-paper`]: {
+        <nav>
+          <MyDrawer
+            variant="permanent"
+            sx={{
               width: drawerWidth,
-              boxSizing: "content-box",
-            },
-          }}
-        >
-          <Toolbar />
-          {/* <Box sx={{ overflow: "auto" }}> */}
-          <StylesProvider injectFirst>
-            <MyBox>
-              {/* 컨텐츠 량에 따라 스크롤바를 추가할지 자동으로 결정*/}
-              {clickDetail ? (
-                <Detail
-                  getId={getId}
-                  setClickDetail={setClickDetail}
-                  markerId={markerId}
-                  isMarker={isMarker}
-                  setIsMarker={setIsMarker}
-                />
-              ) : (
-                <SideList
-                  setGetId={setGetId}
-                  shopList={shopList}
-                  setClickDetail={setClickDetail}
-                />
-              )}
-              <Divider />
-            </MyBox>
-          </StylesProvider>
-        </Drawer>
+              flexShrink: 0,
+              [`& .MuiDrawer-paper`]: {
+                width: drawerWidth,
+                boxSizing: "content-box",
+              },
+            }}
+          >
+            <Toolbar />
+            {/* <Box sx={{ overflow: "auto" }}> */}
+            <StylesProvider injectFirst>
+              <MyBox>
+                {/* 컨텐츠 량에 따라 스크롤바를 추가할지 자동으로 결정*/}
+                {clickDetail ? (
+                  <Detail
+                    getId={getId}
+                    setClickDetail={setClickDetail}
+                    markerId={markerId}
+                    isMarker={isMarker}
+                    setIsMarker={setIsMarker}
+                  />
+                ) : (
+                  <SideList
+                    setGetId={setGetId}
+                    shopList={shopList}
+                    setClickDetail={setClickDetail}
+                  />
+                )}
+                <Divider />
+              </MyBox>
+            </StylesProvider>
+          </MyDrawer>
+        </nav>
       </MobileView>
       <BrowserView>
         <Drawer

@@ -33,6 +33,7 @@ const Span = styled.span`
   border-radius: 23%;
   box-shadow: 3px 3px 4px lightgray;
   background-color: ${(props) => props.backgroundColor || "lightgray"};
+  white-space: nowrap;
 `;
 
 const Img = styled.div`

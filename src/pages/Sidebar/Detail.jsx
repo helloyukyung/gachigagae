@@ -73,7 +73,7 @@ export default function DetailList({
     <>
       <MobileView>
         <Container>
-          <DetailNav>
+          <DetailNav Mobile>
             <StylesProvider injectFirst>
               <BackIcon
                 onClick={BacktoSideBar}
@@ -90,7 +90,7 @@ export default function DetailList({
             image4={detail.image4}
             image5={detail.image5}
           />
-          <InfoInfo>
+          <InfoInfo Mobile>
             <Info>
               <div className="barHeadName">
                 <b className="InfoShopName">{detail.name}</b>
@@ -119,7 +119,7 @@ export default function DetailList({
             </Info>
             <MenuDiv>Menu</MenuDiv>
             <Table>
-              <Tablediv>
+              <Tablediv Mobile>
                 <tr className="Menuheader">
                   <th>Coffee</th>
                   <th>Price</th>
@@ -143,7 +143,7 @@ export default function DetailList({
               </Tablediv>
             </Table>
             <Table>
-              <Tablediv>
+              <Tablediv Mobile>
                 <tr className="Menuheader">
                   <th>Dessert</th>
                   <th>Price</th>
@@ -171,7 +171,9 @@ export default function DetailList({
             <br />
             <br />
             <br />
-            <BottomCall onClick={Telphone}>전화해보개</BottomCall>
+            <BottomCall Mobile onClick={Telphone}>
+              전화해보개
+            </BottomCall>
           </InfoInfo>
         </Container>
       </MobileView>

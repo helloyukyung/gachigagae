@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 const Div = styled.div`
   position: fixed;
   z-index: 999;
@@ -10,6 +11,20 @@ const Div = styled.div`
   height: 30vh;
   background-color: white;
 `;
-export default function BottomNav() {
-  return <Div>BottomNav</Div>;
+const Nav = styled.nav`
+  .nav-menu {
+    color: red;
+  }
+  .nav-menushow {
+    color: blue;
+  }
+`;
+export default function BottomSheet() {
+  return (
+    <>
+      <Nav>
+        <Div>tlqkf</Div>
+      </Nav>
+    </>
+  );
 }

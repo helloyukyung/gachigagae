@@ -6,7 +6,7 @@ import { StylesProvider } from "@material-ui/core/styles";
 import styled from "styled-components";
 
 const MyCarousel = styled(Carousel)`
-  width: 450px;
+  width: ${(props) => (props.Mobile ? "100%" : "450px")};
   height: 270px;
 `;
 
@@ -22,10 +22,10 @@ export default function Pictures({
 
   return (
     <StylesProvider injectFirst>
-      <MyCarousel>
+      <MyCarousel Mobile>
         {images.map((img) => (
           <Paper>
-            <PhotoImg alt={shop_id} src={img} />
+            <PhotoImg Mobile alt={shop_id} src={img} />
           </Paper>
         ))}
       </MyCarousel>

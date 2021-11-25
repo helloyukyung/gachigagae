@@ -1,25 +1,59 @@
-import React from "react";
-import { isMobile } from "react-device-detect";
+import React, { useState } from "react";
+
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from "react-naver-maps";
+import { BrowserView, MobileView } from "react-device-detect";
+import Drawer from "@mui/material/Drawer";
+import ListItem from "@mui/material/ListItem";
+import List from "@mui/material/List";
+// import BottomSheet from "./BottomSheet";
+import styled from "styled-components";
+
+const Div = styled.div`
+  position: fixed;
+  z-index: 999;
+  color: red;
+  font-size: 60px;
+  bottom: 0;
+  width: 100vw;
+  height: 30vh;
+  background-color: white;
+`;
 
 export default function NaverApiMap({
+  mobileData,
   getDataForMarkers,
   setMarkerId,
   setClickDetail,
   setIsMarker,
   setShowBottomSheet,
 }) {
-  const navermaps = window.naver.maps;
-  const onClickCloseBottomSheet = () => {
-    if (isMobile) {
-      setShowBottomSheet(false);
-    }
+  const [state, setState] = useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    setState(open);
   };
+  const list = () => (
+    <Div>
+      <List>
+        <ListItem>tlqkffjak</ListItem>
+        <ListItem>tlqkffjak</ListItem>
+        <ListItem>tlqkffjak</ListItem>
+        <ListItem>tlqkffjak</ListItem>
+      </List>
+    </Div>
+  );
+  const navermaps = window.naver.maps;
+  // const onClickCloseBottomSheet = () => {
+  //   if (isMobile) {
+  //     setShowBottomSheet(false);
+  //   }
+  // };
+
   return (
     <div>
       <RenderAfterNavermapsLoaded clientId={"cc08dar8r4"}>
         <NaverMap
-          onClick={onClickCloseBottomSheet}
+          // onClick={onClickCloseBottomSheet}
           id={"map"}
           mapDivId={"react-naver-map"}
           style={{
@@ -33,25 +67,60 @@ export default function NaverApiMap({
           }
           defaultZoom={16}
         >
-          {getDataForMarkers?.map((marker) => (
-            <Marker
-              key={marker.shop_id}
-              onClick={() => {
-                setMarkerId(marker.shop_id);
-                setIsMarker(true); // marker에서 가져온 detail 상세가 뜨는거지
-                setClickDetail(true);
-                setShowBottomSheet(true);
-              }}
-              position={new navermaps.LatLng(marker.latitude, marker.longitude)}
-              animation={0}
-              icon={{
-                url: "https://i.ibb.co/JBMG7b9/marker.png",
-                size: { width: 44, height: 50 },
-                scaledSize: { width: 44, height: 50 },
-                // anchor: { x: 12, y: 32 },
-              }}
-            />
-          ))}
+          <MobileView>
+            {mobileData?.map((marker) => (
+              <Marker
+                key={marker.shop_id}
+                onClick={() => {
+                  setMarkerId(marker.shop_id);
+                  setIsMarker(true);
+                  setClickDetail(true);
+                  // setShowBottomSheet(true);
+                  toggleDrawer(true);
+                  console.log("marker click");
+                }}
+                position={
+                  new navermaps.LatLng(marker.latitude, marker.longitude)
+                }
+                animation={0}
+                icon={{
+                  url: "https://i.ibb.co/JBMG7b9/marker.png",
+                  size: { width: 44, height: 50 },
+                  scaledSize: { width: 44, height: 50 },
+                  // anchor: { x: 12, y: 32 },
+                }}
+              />
+            ))}
+            <Drawer
+              anchor={"bottom"}
+              open={state}
+              onClose={toggleDrawer(false)}
+            >
+              {list()}
+            </Drawer>
+          </MobileView>
+          <BrowserView>
+            {getDataForMarkers?.map((marker) => (
+              <Marker
+                key={marker.shop_id}
+                onClick={() => {
+                  setMarkerId(marker.shop_id);
+                  setIsMarker(true); // marker에서 가져온 detail 상세가 뜨는거지
+                  setClickDetail(true);
+                }}
+                position={
+                  new navermaps.LatLng(marker.latitude, marker.longitude)
+                }
+                animation={0}
+                icon={{
+                  url: "https://i.ibb.co/JBMG7b9/marker.png",
+                  size: { width: 44, height: 50 },
+                  scaledSize: { width: 44, height: 50 },
+                  // anchor: { x: 12, y: 32 },
+                }}
+              />
+            ))}
+          </BrowserView>
         </NaverMap>
       </RenderAfterNavermapsLoaded>
     </div>

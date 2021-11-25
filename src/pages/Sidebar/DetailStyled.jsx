@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
-
+import { isMobile } from "react-device-detect";
 export const MyBox = styled(Box)`
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -16,7 +16,7 @@ export const LottieDogDiv = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 450px;
+  width: 100%;
   top: 0;
   bottom: 0;
   .waiting {
@@ -31,7 +31,7 @@ export const LottieDogDiv = styled.div`
 export const DetailNav = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
-  width: 450px;
+  width: ${(props) => (props.Mobile ? "100%" : "450px")};
   height: 60px;
   display: flex;
   align-items: center;
@@ -58,10 +58,14 @@ export const Container = styled.div`
 export const InfoInfo = styled.div`
   z-index: 10;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   left: 18px;
+
   bottom: 0;
   top: 15em;
-  width: 400px;
+  width: ${(props) => (props.Mobile ? "100%" : "400px")};
   height: 230px;
   background-color: white;
 `;
@@ -72,9 +76,7 @@ export const Info = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
-
   .barHeadName {
     font-size: 26px;
   }
@@ -97,7 +99,7 @@ export const InstagramLink = styled.a`
 
 //Menu ver 2
 export const Tablediv = styled.div`
-  width: 400px;
+  width: ${(props) => (props.Mobile ? "100%" : "400px")};
   height: auto;
   margin-bottom: 20px;
 `;
@@ -139,7 +141,7 @@ export const MenuDiv = styled.div`
 `;
 
 export const PhotoImg = styled.img`
-  width: 450px;
+  width: ${(props) => (props.Mobile ? "100%" : "450px")};
   height: 270px;
 `;
 
@@ -167,7 +169,7 @@ export const MenuBadge = styled.span`
 `;
 
 export const BottomCall = styled.div`
-  width: 450px;
+  width: ${(props) => (props.Mobile ? "100%" : "450px")};
   height: 60px;
   font-size: 35px;
   text-align: center;

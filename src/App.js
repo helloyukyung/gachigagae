@@ -9,10 +9,10 @@ import Sidebar from "./pages/Sidebar";
 //component
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import BottomNav from "./components/BottomNav";
+import BottomSheet from "./pages/Map/BottomSheet";
 
 function App() {
-  //map에 marker 데이터를 전달
+  //map에 marker 데이터를 전달(Browser)
   const [getDataForMarkers, setGetDataForMarkers] = useState(null);
   //marker.id 를 전달하기
   const [markerId, setMarkerId] = useState(null);
@@ -43,7 +43,9 @@ function App() {
                       setIsMarker={setIsMarker}
                       setShowBottomSheet={setShowBottomSheet}
                     />
-                    {showBottomSheet ? <BottomNav /> : null}
+                    {/* {showBottomSheet ? (
+                      <BottomSheet setMarkerId={setMarkerId} />
+                    ) : null} */}
                   </Box>
                 }
               />

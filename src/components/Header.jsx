@@ -5,7 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
+import { CgClose } from "react-icons/cg";
 // import { TramRounded } from "@material-ui/icons";
 import { IconContext } from "react-icons";
 
@@ -17,12 +17,18 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 20%;
-
+  .icon {
+    padding-top: 0.3em;
+    font-size: 2.3em;
+    .closeButton {
+      font-size: 1em;
+      font-weight: 1.4em;
+    }
+  }
   .textLeft {
     display: flex;
     flex-direction: row;
     text-align: center;
-    font-size: 2.375em;
   }
   .Main {
     text-decoration: none !important ;
@@ -35,9 +41,9 @@ export const Container = styled.div`
     }
   }
   .MainInfo {
-    font-size: 0.8em;
+    font-size: 2em;
     padding-left: 1em;
-    padding-top: 0.563em;
+    padding-top: 0.28em;
     /* display: block;
     overflow: hidden; */
     @media (max-width: 910px) {
@@ -69,7 +75,7 @@ export default function Header({ setClickDetail, setIsMarker }) {
             }}
           >
             <Container>
-              <div className="textLeft">
+              <div className="icon">
                 <nav>
                   <IconContext.Provider value={{ color: "#fff" }}>
                     {!iconShow ? (
@@ -78,7 +84,10 @@ export default function Header({ setClickDetail, setIsMarker }) {
                       </Link>
                     ) : (
                       <Link to="/">
-                        <IoClose onClick={() => setIconShow(false)} />
+                        <CgClose
+                          className="closeButton"
+                          onClick={() => setIconShow(false)}
+                        />
                       </Link>
                     )}
                   </IconContext.Provider>
@@ -112,7 +121,7 @@ export default function Header({ setClickDetail, setIsMarker }) {
                   <b>같이가개🐶</b>
                 </div>
                 <div className="MainInfo">
-                  <span style={{ color: "#ffe680" }}>행궁동</span> 애견동반이
+                  <span style={{ color: "#60401f" }}>행궁동</span> 애견동반이
                   가능한 카페를 알려주는 서비스
                 </div>
               </div>
