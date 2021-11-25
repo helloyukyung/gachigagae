@@ -9,7 +9,6 @@ import Sidebar from "./pages/Sidebar";
 //component
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import BottomSheet from "./pages/Map/BottomSheet";
 
 function App() {
   //map에 marker 데이터를 전달(Browser)
@@ -20,8 +19,6 @@ function App() {
   const [clickDetail, setClickDetail] = useState(false);
   // Marker를 클릭 했을때 MarkerURL이 true
   const [isMarker, setIsMarker] = useState(false);
-  // showBottomSheet
-  const [showBottomSheet, setShowBottomSheet] = useState(false);
 
   return (
     <>
@@ -41,7 +38,7 @@ function App() {
                       setMarkerId={setMarkerId}
                       setClickDetail={setClickDetail}
                       setIsMarker={setIsMarker}
-                      setShowBottomSheet={setShowBottomSheet}
+                      markerId={markerId}
                     />
                     {/* {showBottomSheet ? (
                       <BottomSheet setMarkerId={setMarkerId} />

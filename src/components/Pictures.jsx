@@ -23,7 +23,7 @@ export default function Pictures({
   return (
     <StylesProvider injectFirst>
       <MyCarousel Mobile>
-        {images.map((img) => (
+        {images?.map((img) => (
           <Paper>
             <PhotoImg Mobile alt={shop_id} src={img} />
           </Paper>

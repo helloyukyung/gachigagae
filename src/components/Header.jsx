@@ -32,9 +32,10 @@ export const Container = styled.div`
   }
   .Main {
     text-decoration: none !important ;
+
     cursor: pointer;
     color: #f5f5f5;
-    font-size: 2.375em;
+    font-size: 2.5em;
     :hover {
       text-decoration: none !important ;
       color: #ffe680;
@@ -44,8 +45,6 @@ export const Container = styled.div`
     font-size: 2em;
     padding-left: 1em;
     padding-top: 0.28em;
-    /* display: block;
-    overflow: hidden; */
     @media (max-width: 910px) {
       display: none;
     }
@@ -93,11 +92,10 @@ export default function Header({ setClickDetail, setIsMarker }) {
                   </IconContext.Provider>
                 </nav>
               </div>
-              <Link to="/">
-                <div className="Main" onClick={() => setIconShow(false)}>
-                  같이가개🐶
-                </div>
-              </Link>
+              <Link to="/"></Link>
+              <div className="Main" onClick={() => setIconShow(false)}>
+                같이가개🐶
+              </div>
               <div className="MainVer">v 1.0</div>
             </Container>
           </Toolbar>

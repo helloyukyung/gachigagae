@@ -11,7 +11,7 @@ export default function Map({
   setMarkerId,
   setClickDetail,
   setIsMarker,
-  setShowBottomSheet,
+  markerId,
 }) {
   // shopList Data
   const [mobileData, setMobileData] = useState(null);
@@ -60,7 +60,7 @@ export default function Map({
               setMarkerId={setMarkerId}
               setClickDetail={setClickDetail}
               setIsMarker={setIsMarker}
-              setShowBottomSheet={setShowBottomSheet}
+              markerId={markerId}
             ></NaverApiMap>
           </Typography>
         </>
@@ -75,7 +75,6 @@ export default function Map({
               setMarkerId={setMarkerId}
               setClickDetail={setClickDetail}
               setIsMarker={setIsMarker}
-              setShowBottomSheet={setShowBottomSheet}
             ></NaverApiMap>
           </Typography>
         </>

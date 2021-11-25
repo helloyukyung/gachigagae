@@ -1,23 +1,12 @@
 import React, { useState } from "react";
-import { BottomSheet } from "react-spring-bottom-sheet";
+
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from "react-naver-maps";
 import { BrowserView, MobileView } from "react-device-detect";
 import Drawer from "@mui/material/Drawer";
 import ListItem from "@mui/material/ListItem";
 import List from "@mui/material/List";
-// import BottomSheet from "./BottomSheet";
-import styled from "styled-components";
 
-const Div = styled.div`
-  position: fixed;
-  z-index: 999;
-  color: red;
-  font-size: 60px;
-  bottom: 0;
-  width: 100vw;
-  height: 30vh;
-  background-color: white;
-`;
+import BottomSheet from "./BottomSheet";
 
 export default function NaverApiMap({
   mobileData,
@@ -25,7 +14,7 @@ export default function NaverApiMap({
   setMarkerId,
   setClickDetail,
   setIsMarker,
-  setShowBottomSheet,
+  markerId,
 }) {
   const [state, setState] = useState(false);
 
@@ -33,16 +22,7 @@ export default function NaverApiMap({
     console.log("toggle");
     setState(open);
   };
-  const list = () => (
-    <Div>
-      <List>
-        <ListItem>tlqkffjak</ListItem>
-        <ListItem>tlqkffjak</ListItem>
-        <ListItem>tlqkffjak</ListItem>
-        <ListItem>tlqkffjak</ListItem>
-      </List>
-    </Div>
-  );
+
   const navermaps = window.naver.maps;
   // const onClickCloseBottomSheet = () => {
   //   if (isMobile) {
@@ -76,8 +56,6 @@ export default function NaverApiMap({
                   setMarkerId(marker.shop_id);
                   setIsMarker(true);
                   setClickDetail(true);
-                  // setShowBottomSheet(true);
-
                   setState(true);
                   console.log("marker click");
                 }}
@@ -98,7 +76,8 @@ export default function NaverApiMap({
               open={state}
               onClose={toggleDrawer(false)}
             >
-              {list()}
+              {/* {list()} */}
+              <BottomSheet markerId={markerId} />
             </Drawer>
           </MobileView>
           <BrowserView>
