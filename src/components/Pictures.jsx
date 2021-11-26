@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const MyCarousel = styled(Carousel)`
   width: ${(props) => (props.Mobile ? "100%" : "450px")};
-  height: 270px;
+  height: ${(props) => (props.Mobile ? "40%" : "400px")};
 `;
 
 export default function Pictures({

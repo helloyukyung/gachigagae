@@ -32,11 +32,11 @@ export const DetailNav = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
   width: ${(props) => (props.Mobile ? "100%" : "450px")};
-  height: 60px;
+  height: ${(props) => (props.Mobile ? "5em" : "60px")};
   display: flex;
   align-items: center;
   position: fixed;
-  z-index: 999999;
+  z-index: 9999;
 `;
 export const BackIcon = styled(ArrowBackIcon)`
   margin-left: 13px;
@@ -77,10 +77,7 @@ export const Info = styled.div`
   text-align: center;
   font-size: ${(props) => (props.Mobile ? "2.5em" : "20px")};
   .barHeadName {
-    font-size: 26px;
-  }
-  .InfoShopName {
-    font-size: 30px;
+    font-size: ${(props) => (props.Mobile ? "2em" : "30px")};
   }
 `;
 export const InstagramLink = styled.a`
@@ -138,6 +135,10 @@ export const MenuKind = styled.span`
 export const MenuDiv = styled.div`
   padding-top: 10px;
   font-size: 30px;
+`;
+export const MMenuDiv = styled.div`
+  padding-top: 0.5em;
+  font-size: 3em;
 `;
 
 export const PhotoImg = styled.img`

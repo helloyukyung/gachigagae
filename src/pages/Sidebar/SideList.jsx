@@ -2,11 +2,11 @@ import React from "react";
 import ListItem from "@mui/material/ListItem";
 import styled from "styled-components";
 import { BrowserView, MobileView } from "react-device-detect";
+
 const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
 `;
-
 const Div = styled.div`
   display: flex;
   flex-direction: row;
@@ -60,6 +60,17 @@ const MContainer = styled.div`
   width: 100%;
   height: 20rem;
   font-size: 2.5em;
+  padding: 0.4em;
+  border-bottom: 0.04em solid gray;
+  display: flex;
+  .YKbadge {
+    color: #0099cc;
+    position: absolute;
+    font-size: 1.5em;
+    text-shadow: 3px 3px 3px black;
+    top: 3.5em;
+    left: 1.1em;
+  }
 `;
 const MSpan = styled(Span)`
   font-size: 0.8em;
@@ -67,10 +78,25 @@ const MSpan = styled(Span)`
 
 const Info = styled.div`
   width: 70%;
-  height: 100%;
+  height: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 0.8em;
+
+  .name {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .name-score {
+    display: flex;
+  }
+  .badge {
+    margin-bottom: 0.2em;
+  }
+`;
+const MImg = styled.img`
+  border-radius: 5%;
 `;
 
 function SideList(props) {
@@ -78,30 +104,30 @@ function SideList(props) {
     <>
       <MobileView>
         {props.shopList.map((shop) => (
-          <MContainer>
-            <ListItem
-              button
-              onClick={() => {
-                props.setClickDetail(true);
-                props.setGetId(shop.shop_id);
-              }}
-              key={shop.id}
-            >
-              <img
+          <ListItem
+            button
+            onClick={() => {
+              props.setClickDetail(true);
+              props.setGetId(shop.shop_id);
+            }}
+            key={shop.id}
+          >
+            <MContainer>
+              <MImg
                 className="phoneImage"
                 alt={shop.id}
                 src={shop.image1}
-                width="30%"
-                height="100%"
+                width="40%"
+                height="95%"
               />
-              {/* {!!shop.yk_certification && (
+              {!!shop.yk_certification && (
                 <span className="YKbadge">🙆‍♀️추천카페</span>
-              )} */}
+              )}
 
-              <Info className="infomation">
+              <Info>
                 <div className="info-up">
-                  <div className="name">
-                    {shop.name}⭐{shop.score}.0
+                  <div className="name-score">
+                    <div className="name">{shop.name}</div>⭐{shop.score}.0
                   </div>
                   {shop.address_depth1}&nbsp;
                   {shop.address_depth2}&nbsp;
@@ -123,8 +149,8 @@ function SideList(props) {
                   )}
                 </div>
               </Info>
-            </ListItem>
-          </MContainer>
+            </MContainer>
+          </ListItem>
         ))}
       </MobileView>
       <BrowserView>

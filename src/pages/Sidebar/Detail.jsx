@@ -15,6 +15,7 @@ import {
   Table,
   Tablediv,
   InfoInfo,
+  MMenuDiv,
 } from "./DetailStyled";
 import LotttieDog from "../../components/Lottie/LotttieDog";
 import Pictures from "../../components/Pictures";
@@ -76,8 +77,7 @@ export default function DetailList({
             <StylesProvider injectFirst>
               <BackIcon
                 onClick={BacktoSideBar}
-                sx={{ color: "#ff9966", fontSize: 36 }}
-                // variant="contained"
+                sx={{ color: "#ff9966", fontSize: "4em" }}
               />
             </StylesProvider>
           </DetailNav>
@@ -91,10 +91,7 @@ export default function DetailList({
           />
           <InfoInfo Mobile>
             <Info Mobile>
-              <div className="barHeadName">
-                <b className="InfoShopName">{detail.name}</b>
-                <br />
-              </div>
+              <div className="barHeadName">{detail.name}</div>
               {detail.score}.0
               {detail.score === 5 && "⭐⭐⭐⭐⭐"}
               {detail.score === 4 && "⭐⭐⭐⭐☆"}
@@ -116,7 +113,7 @@ export default function DetailList({
                 </InstagramLink>
               )}
             </Info>
-            <MenuDiv>Menu</MenuDiv>
+            <MMenuDiv>Menu</MMenuDiv>
             <Table Mobile>
               <Tablediv Mobile>
                 <tr className="Menuheader">
@@ -206,7 +203,7 @@ export default function DetailList({
           <InfoInfo>
             <Info>
               <div className="barHeadName">
-                <b className="InfoShopName">{detail.name}</b>
+                {detail.name}
                 <br />
               </div>
               {detail.score}.0

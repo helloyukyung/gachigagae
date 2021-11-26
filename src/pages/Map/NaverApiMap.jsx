@@ -7,6 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import List from "@mui/material/List";
 
 import BottomSheet from "./BottomSheet";
+import { CloseFullscreenOutlined } from "@mui/icons-material";
 
 export default function NaverApiMap({
   mobileData,
@@ -34,7 +35,6 @@ export default function NaverApiMap({
     <div>
       <RenderAfterNavermapsLoaded clientId={"cc08dar8r4"}>
         <NaverMap
-          // onClick={onClickCloseBottomSheet}
           id={"map"}
           mapDivId={"react-naver-map"}
           style={{
@@ -74,6 +74,7 @@ export default function NaverApiMap({
               anchor={"bottom"}
               open={state}
               onClose={toggleDrawer(false)}
+              onOpen={toggleDrawer(true)}
             >
               <BottomSheet markerId={markerId} />
             </Drawer>
@@ -84,7 +85,7 @@ export default function NaverApiMap({
                 key={marker.shop_id}
                 onClick={() => {
                   setMarkerId(marker.shop_id);
-                  setIsMarker(true); // marker에서 가져온 detail 상세가 뜨는거지
+                  setIsMarker(true);
                   setClickDetail(true);
                 }}
                 position={

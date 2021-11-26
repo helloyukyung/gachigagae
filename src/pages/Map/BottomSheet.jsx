@@ -82,7 +82,7 @@ export default function BottomSheet({ markerId }) {
 
   return (
     <>
-      <Container>
+      <Container onClick={console.log("ge")}>
         <Img
           className="phoneImage"
           alt={bottomDetail.id}
