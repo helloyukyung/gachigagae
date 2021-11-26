@@ -63,7 +63,7 @@ export const InfoInfo = styled.div`
   align-items: center;
   left: ${(props) => (props.Mobile ? "2.6%" : "16px")};
   bottom: 0;
-  top: 15em;
+  top: ${(props) => (props.Mobile ? "40em" : "15em")};
   width: ${(props) => (props.Mobile ? "95%" : "400px")};
 
   background-color: white;
@@ -144,7 +144,7 @@ export const MMenuDiv = styled.div`
 
 export const PhotoImg = styled.img`
   width: ${(props) => (props.Mobile ? "100%" : "450px")};
-  height: 270px;
+  height: ${(props) => (props.Mobile ? "50rem" : "450px")};
 `;
 
 export const MenuBadge = styled.span`
@@ -157,8 +157,8 @@ export const MenuBadge = styled.span`
 
 export const BottomCall = styled.div`
   width: ${(props) => (props.Mobile ? "100%" : "450px")};
-  height: 60px;
-  font-size: 35px;
+  height: ${(props) => (props.Mobile ? "8%" : "60px")};
+  font-size: ${(props) => (props.Mobile ? "3.4em" : "35px")};
   text-align: center;
   background-color: #ff9966;
   position: fixed;

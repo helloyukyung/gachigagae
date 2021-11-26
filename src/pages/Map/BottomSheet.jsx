@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 0.5em;
-  font-size: 2.5em;
+  font-size: 2.8em;
 `;
 
 const Info = styled.div`
@@ -35,7 +35,7 @@ const Img = styled.img`
 `;
 const Span = styled.span`
   color: #333333;
-  font-size: 1em;
+  font-size: 0.9em;
   padding: 0.2em;
   margin: 0.2em;
   border-radius: 10%;

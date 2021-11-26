@@ -56,7 +56,9 @@ export default function DetailList({
     setIsMarker(false);
   };
   const Telphone = () => {
-    alert(`매장 전화번호는 ${detail.tel}다개`);
+    detail.tel
+      ? alert(`매장 전화번호는 '${detail.tel}'이다개`)
+      : alert("매장번호가 없다개");
   };
 
   if (loading)
