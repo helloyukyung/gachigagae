@@ -53,7 +53,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: 19px;
+  font-size: ${(props) => (props.Mobile ? "1.2em" : "19px")};
 `;
 export const InfoInfo = styled.div`
   z-index: 10;
@@ -65,6 +65,7 @@ export const InfoInfo = styled.div`
   bottom: 0;
   top: 15em;
   width: ${(props) => (props.Mobile ? "95%" : "400px")};
+
   background-color: white;
 `;
 

@@ -52,7 +52,6 @@ export default function BottomSheet({ markerId }) {
   const [error, setError] = useState(null);
   const shopListURL = `http://sulrae.com/api/shop/${markerId}`;
   useEffect(() => {
-    console.log("bottom list");
     const fetchShopList = async () => {
       try {
         setError(null);
@@ -69,7 +68,6 @@ export default function BottomSheet({ markerId }) {
     fetchShopList();
   }, [markerId]);
 
-  console.log("detail : ", bottomDetail);
   if (loading)
     return (
       <LottieDogDiv>
@@ -82,8 +80,9 @@ export default function BottomSheet({ markerId }) {
 
   return (
     <>
-      <Container onClick={console.log("ge")}>
+      <Container>
         <Img
+          onClick={console.log("ge")}
           className="phoneImage"
           alt={bottomDetail.id}
           src={bottomDetail.image1}

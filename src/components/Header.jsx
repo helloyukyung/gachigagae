@@ -72,12 +72,18 @@ const MContainer = styled.div`
     }
   }
 `;
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
+`;
 const Main = styled.div`
   padding-top: 0.1em;
-  .main {
-    text-decoration-line: none;
-    color: white;
-  }
 `;
 
 export default function Header({ setClickDetail, setIsMarker }) {
@@ -120,11 +126,11 @@ export default function Header({ setClickDetail, setIsMarker }) {
                 </IconContext.Provider>
               </div>
 
-              <Link to="/">
+              <StyledLink to="/">
                 <Main onClick={() => setIconShow(false)}>
-                  <span className="main"> 같이가개🐶</span>
+                  <span> 같이가개🐶</span>
                 </Main>
-              </Link>
+              </StyledLink>
               <div className="MainVer">v 1.0</div>
             </MContainer>
           </Toolbar>
