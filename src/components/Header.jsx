@@ -75,12 +75,6 @@ const MContainer = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
-  &:hover,
-  &:visited,
-  &:link,
-  &:active {
-    text-decoration: none;
-  }
 `;
 const Main = styled.div`
   padding-top: 0.1em;

@@ -51,6 +51,7 @@ export default function NaverApiMap({
           <MobileView>
             {mobileData?.map((marker) => (
               <Marker
+                style={{ margin: "-7px" }}
                 key={marker.shop_id}
                 onClick={() => {
                   setMarkerId(marker.shop_id);
@@ -66,7 +67,7 @@ export default function NaverApiMap({
                   url: "https://i.ibb.co/JBMG7b9/marker.png",
                   size: { width: 80, height: 86 },
                   scaledSize: { width: 90, height: 96 },
-                  // anchor: { x: 12, y: 32 },
+                  anchor: { x: -40, y: 230 },
                 }}
               />
             ))}

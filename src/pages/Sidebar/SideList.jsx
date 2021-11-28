@@ -28,7 +28,7 @@ const Span = styled.span`
   font-size: 17px;
   padding: 3px;
   margin: 2px;
-  border-radius: 23%;
+  border-radius: 6px;
   box-shadow: 3px 3px 4px lightgray;
   background-color: ${(props) => props.backgroundColor || "lightgray"};
   white-space: nowrap;
@@ -190,7 +190,7 @@ function SideList(props) {
                   </div>
                   <div className="badge">
                     {!!shop.has_insta && (
-                      <Span backgroundColor="#ff80d5">🔥insta</Span>
+                      <Span backgroundColor="#ddb4cf">🔥insta</Span>
                     )}
                     {!!shop.has_parking_lot && (
                       <Span backgroundColor="#80ccff">🚗주차가능</Span>

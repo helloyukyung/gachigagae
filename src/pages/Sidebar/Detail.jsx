@@ -83,23 +83,12 @@ export default function DetailList({
               />
             </StylesProvider>
           </DetailNav>
-          <Pictures
-            shop_id={detail.shop_id}
-            image1={detail.image1}
-            image2={detail.image2}
-            image3={detail.image3}
-            image4={detail.image4}
-            image5={detail.image5}
-          />
+          <Pictures shop_id={detail.shop_id} images={detail.images} />
           <InfoInfo Mobile>
             <Info Mobile>
               <div className="barHeadName">{detail.name}</div>
               {detail.score}.0
-              {detail.score === 5 && "⭐⭐⭐⭐⭐"}
-              {detail.score === 4 && "⭐⭐⭐⭐☆"}
-              {detail.score === 3 && "⭐⭐⭐☆☆"}
-              {detail.score === 2 && "⭐⭐☆☆☆"}
-              {detail.score === 1 && "⭐☆☆☆☆"}
+              {"⭐".repeat(detail.score)}
               <br />
               {detail.address}
               <br />
@@ -194,14 +183,7 @@ export default function DetailList({
               />
             </StylesProvider>
           </DetailNav>
-          <Pictures
-            shop_id={detail.shop_id}
-            image1={detail.image1}
-            image2={detail.image2}
-            image3={detail.image3}
-            image4={detail.image4}
-            image5={detail.image5}
-          />
+          <Pictures shop_id={detail.shop_id} images={detail.images} />
           <InfoInfo>
             <Info>
               <div className="barHeadName">
@@ -209,11 +191,7 @@ export default function DetailList({
                 <br />
               </div>
               {detail.score}.0
-              {detail.score === 5 && "⭐⭐⭐⭐⭐"}
-              {detail.score === 4 && "⭐⭐⭐⭐☆"}
-              {detail.score === 3 && "⭐⭐⭐☆☆"}
-              {detail.score === 2 && "⭐⭐☆☆☆"}
-              {detail.score === 1 && "⭐☆☆☆☆"}
+              {"⭐".repeat(detail.score)}
               <br />
               {detail.address}
               <br />

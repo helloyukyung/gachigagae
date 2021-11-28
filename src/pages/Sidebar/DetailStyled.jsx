@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Box from "@mui/material/Box";
-import { isMobile } from "react-device-detect";
+
 export const MyBox = styled(Box)`
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -53,7 +53,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: ${(props) => (props.Mobile ? "1.2em" : "19px")};
+  font-size: ${(props) => (props.Mobile ? "1.2em" : "21px")};
 `;
 export const InfoInfo = styled.div`
   z-index: 10;
@@ -61,7 +61,7 @@ export const InfoInfo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  left: ${(props) => (props.Mobile ? "2.6%" : "16px")};
+  left: ${(props) => (props.Mobile ? "2.6%" : "23px")};
   bottom: 0;
   top: ${(props) => (props.Mobile ? "40em" : "15em")};
   width: ${(props) => (props.Mobile ? "95%" : "400px")};
@@ -143,8 +143,8 @@ export const MMenuDiv = styled.div`
 `;
 
 export const PhotoImg = styled.img`
-  width: ${(props) => (props.Mobile ? "100%" : "450px")};
-  height: ${(props) => (props.Mobile ? "50rem" : "450px")};
+  width: ${(props) => (props.Mobile ? "100%" : "200px")};
+  height: ${(props) => (props.Mobile ? "50rem" : "200px")};
 `;
 
 export const MenuBadge = styled.span`
