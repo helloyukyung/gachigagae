@@ -8,41 +8,61 @@
 
 진행기간 : 11월 8일 ~ 11월 26일 (18일)
 
-**프론트엔드**: 1명  
-**백엔드**: 1명
+**프론트엔드**: 김유경  
+**백엔드**: 정민찬
 
 ## 2. 목적
 
-핫플로 유명한 블라블라
-
-## 3. 적용 프레임워크 및 라이브러리
+## 3. 적용기술
 
 - [React]()
 
 - [Naver Cloud Maps](https://www.ncloud.com/product/applicationService/maps)
 
-- [axios]()
+- [axios](https://www.npmjs.com/package/axios)
 
-- [react-device-detect]()
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 
-- [Material Ui]()
+- [react-device-detect](https://www.npmjs.com/package/react-device-detect)
 
-- [react-material-ui-carousel]()
+- [styled-components](https://styled-components.com/)
 
-- [react-lottie]()
+- [Material Ui](https://mui.com/)
+
+- [react-material-ui-carousel](https://www.npmjs.com/package/react-material-ui-carousel)
+
+- [react-lottie](https://www.npmjs.com/package/react-lottie)
 
 ## 4. 구현기능
 
 - 리스트 뷰
 
-  - ui
+  - **ui**  
+    행궁동 지도에 마커를 표시하여 행궁동 내 반려동물 카페들을 한눈에 파악할 수 있게 했습니다.
 
-    추천카페, 별점, 뱃지를 통해 카페 별 특징을 나타내고자 했습니다.
+    추천카페, 별점, 뱃지를 통해 카페 별 특징을 나타내어 이용자들이 원하는 카페를 손쉽게 확인할 수 있도록 만들었습니다.
 
-  - 기능
+  - **기능**  
+    useEffect훅을 사용하여 비동기적으로 데이터를 호출하였고 axios를 사용해 백엔드 데이터를 가져와 전체 카페 리스트를 보여주었습니다.
+
+    map()를 사용해 가져온 데이터를 원하는 리스트뷰로 만들어 주었습니다.
 
 - 상세
 
-  - ui
+  - ui  
+    원하는 위치의 카페의 정보를 쉽게 접근할 수 있게끔 하기 위해 지도 내의 마커를 클릭하면 상세 페이지바로 넘어갈 수 있게 구현하였습니다.
 
-  - 기능
+    랜딩페이지로 lottie 이미지를 넣어주었습니다.
+
+    상세페이지 바에는 사진을 캐러셀로 구현하여 한 div안에서 여러 사진을 넘겨가며 해당 카페의 내부를 쉽게 확인할 수 있게 했습니다.
+
+    해당 카페의 위치, 운영시간, 휴무일, 메뉴 정보를 넣어 카페 상세정보를 추가해주었습니다.
+
+    좀 더 점부가적인 정보를 원하는 이용자를 위해 '전화해보개'버튼과 '인스타링크'링크를 추가해놓았습니다.
+
+  - 기능  
+    useEffect훅을 사용하여 비동기적으로 데이터를 호출하였고 axios를 사용해 백엔드 데이터를 가져와 상세 데이터를 보여주었습니다.
+
+    map()를 사용해 가져온 데이터를 원하는 상세뷰로 만들어 주었습니다.
+
+    table 태그를 사용해 메뉴를 구현했습니다.
