@@ -2,7 +2,7 @@
 
 <i>행궁동 주변 반려동물과 함께 입장이 가능한 카페를 알려주는 서비스</i>
 
-![image](https://user-images.githubusercontent.com/49505843/143825851-041198c0-1119-419d-88a3-10d9cacfbcba.png)
+![image](https://user-images.githubusercontent.com/49505843/143827651-0433ea55-ddcc-40e2-bdc5-5c722ecac642.png)
 
 <br>
 
@@ -42,7 +42,7 @@
 ## 4. 구현기능
 
 - 👀리스트 뷰
-![image](https://user-images.githubusercontent.com/49505843/143825989-b6e225df-7622-403a-8e99-8ea300416688.png)
+![image](https://user-images.githubusercontent.com/49505843/143827670-bfea0d03-a190-4f40-a0f7-a721eb2e45af.png)
 
 
   - 👆**ui**  
@@ -56,7 +56,7 @@
     map()를 사용해 가져온 데이터를 원하는 리스트뷰로 만들어 주었습니다.
 
 - 👀상세 뷰
-![image](https://user-images.githubusercontent.com/49505843/143825939-a78c35bf-ae17-44ae-ac4a-b1f2b77a36ad.png)
+![image](https://user-images.githubusercontent.com/49505843/143827742-19c5ead9-4cad-4af2-8100-ce8eabf8029e.png)
 
 
   - 👆**ui**  
