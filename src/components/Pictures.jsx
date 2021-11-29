@@ -16,7 +16,7 @@ export default function Pictures({ shop_id, images }) {
       <MobileView>
         <MyCarousel Mobile>
           {images?.map((img) => (
-            <Paper>
+            <Paper key={shop_id}>
               <PhotoImg Mobile alt={shop_id} src={img} />
             </Paper>
           ))}
