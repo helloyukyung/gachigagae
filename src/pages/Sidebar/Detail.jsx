@@ -76,7 +76,7 @@ export default function DetailList({
   return (
     <>
       <MobileView>
-        <Container Mobile>
+        <Container key={detail.shop_id} Mobile>
           <DetailNav Mobile>
             <StylesProvider injectFirst>
               <BackIcon
@@ -175,7 +175,7 @@ export default function DetailList({
         </Container>
       </MobileView>
       <BrowserView>
-        <Container>
+        <Container key={detail.shop_id}>
           <DetailNav>
             <StylesProvider injectFirst>
               <BackIcon
