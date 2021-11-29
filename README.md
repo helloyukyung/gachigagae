@@ -2,8 +2,6 @@
 
 <i>행궁동 주변 반려동물과 함께 입장이 가능한 카페를 알려주는 서비스</i>
 
-![image](https://user-images.githubusercontent.com/49505843/143827651-0433ea55-ddcc-40e2-bdc5-5c722ecac642.png)
-
 <br>
 
 ## 1. 진행 기간 및 인원
