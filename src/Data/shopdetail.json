@@ -1,0 +1,69 @@
+{
+  "bb08b76d-c4fc-4182-aa64-1ee41b0c58c7": [
+    {
+      "shop_id": "bb08b76d-c4fc-4182-aa64-1ee41b0c58c7",
+      "name": "미쓰상",
+      "tel": null,
+      "open_time_weekday": "12:00~23:00",
+      "open_time_weekend": "12:00~23:00",
+      "closed": "인스타 참고",
+      "exposure": true,
+      "score": 5,
+      "images": [
+        "https://gachigagae.s3.ap-northeast-2.amazonaws.com/shop/image/bb08b76d-c4fc-4182-aa64-1ee41b0c58c7/7755C1078D97.jpg",
+        "https://gachigagae.s3.ap-northeast-2.amazonaws.com/shop/image/bb08b76d-c4fc-4182-aa64-1ee41b0c58c7/1CF371A55247.jpg",
+        "https://gachigagae.s3.ap-northeast-2.amazonaws.com/shop/image/bb08b76d-c4fc-4182-aa64-1ee41b0c58c7/CB350DAC277E.jpg",
+        "https://gachigagae.s3.ap-northeast-2.amazonaws.com/shop/image/bb08b76d-c4fc-4182-aa64-1ee41b0c58c7/22C8BAF8EF61.jpg",
+        "https://gachigagae.s3.ap-northeast-2.amazonaws.com/shop/image/bb08b76d-c4fc-4182-aa64-1ee41b0c58c7/97F2416E24CC.jpg"
+      ],
+      "source": "인스타그램",
+      "address": "경기도 수원시 팔달구 화서문로17번길 54",
+      "address_depth1": "경기",
+      "address_depth2": "수원시 팔달구",
+      "address_depth3": "남창동",
+      "longitude": "127.01255339810108",
+      "latitude": "37.28670090783038",
+      "instagram_url": "https://www.instagram.com/coexistence_space/",
+      "yk_certification": true,
+      "has_insta": true,
+      "has_parking_lot": false,
+      "has_group_seat": true,
+      "is_good_laptop": false,
+      "large_dog_possible": true,
+      "menu": [
+        {
+          "id": 1,
+          "category": "coffee",
+          "name": "단짠라떼",
+          "price": 6300,
+          "is_main": true,
+          "is_popular": false
+        },
+        {
+          "id": 2,
+          "category": "dessert",
+          "name": "단짠크로플샌드",
+          "price": 9300,
+          "is_main": true,
+          "is_popular": false
+        },
+        {
+          "id": 3,
+          "category": "coffee",
+          "name": "단짠커피",
+          "price": 6000,
+          "is_main": false,
+          "is_popular": false
+        },
+        {
+          "id": 7,
+          "category": "dessert",
+          "name": "로투스크로플",
+          "price": 10300,
+          "is_main": false,
+          "is_popular": false
+        }
+      ]
+    }
+  ]
+}
