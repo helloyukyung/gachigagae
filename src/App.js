@@ -40,9 +40,6 @@ function App() {
                       setIsMarker={setIsMarker}
                       markerId={markerId}
                     />
-                    {/* {showBottomSheet ? (
-                      <BottomSheet setMarkerId={setMarkerId} />
-                    ) : null} */}
                   </Box>
                 }
               />

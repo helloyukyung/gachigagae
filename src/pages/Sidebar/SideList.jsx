@@ -2,7 +2,7 @@ import React from "react";
 import ListItem from "@mui/material/ListItem";
 import styled from "styled-components";
 import { BrowserView, MobileView } from "react-device-detect";
-import shopDummy from "../../Data/shop.json";
+
 const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
@@ -103,7 +103,7 @@ function SideList(props) {
   return (
     <>
       <MobileView>
-        {shopDummy.map((shop) => (
+        {props.shop.map((shop) => (
           <ListItem
             button
             onClick={() => {

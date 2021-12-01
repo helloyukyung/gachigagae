@@ -19,7 +19,6 @@ import {
 } from "./DetailStyled";
 import LotttieDog from "../../components/Lottie/LotttieDog";
 import Pictures from "../../components/Pictures";
-import shopdetail from "../../Data/shopdetail.json";
 
 export default function DetailList({
   getId,
@@ -34,7 +33,6 @@ export default function DetailList({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const URL = `http://sulrae.com/api/shop/${isMarker ? markerId : getId}`;
-  console.log(shopdetail);
 
   //get detail Data
   useEffect(() => {
