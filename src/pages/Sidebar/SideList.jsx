@@ -103,7 +103,7 @@ function SideList(props) {
   return (
     <>
       <MobileView>
-        {props.shop.map((shop) => (
+        {props.shopList.map((shop) => (
           <ListItem
             button
             onClick={() => {

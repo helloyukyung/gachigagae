@@ -121,9 +121,7 @@ export default function Header({ setClickDetail, setIsMarker }) {
               </div>
 
               <StyledLink to="/">
-                <Main onClick={() => setIconShow(false)}>
-                  <span> 같이가개🐶</span>
-                </Main>
+                <Main onClick={() => setIconShow(false)}>같이가개🐶</Main>
               </StyledLink>
               <div className="MainVer">v 1.0</div>
             </MContainer>
@@ -144,9 +142,7 @@ export default function Header({ setClickDetail, setIsMarker }) {
           >
             <Container>
               <div className="textLeft">
-                <div className="Main">
-                  <b>같이가개🐶</b>
-                </div>
+                <div className="Main">같이가개🐶</div>
                 <div className="MainInfo">
                   <span style={{ color: "#60401f" }}>행궁동</span> 애견동반이
                   가능한 카페를 알려주는 서비스
