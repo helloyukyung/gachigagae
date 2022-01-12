@@ -11,6 +11,7 @@ import Detail from "./Detail";
 import { StylesProvider } from "@material-ui/core/styles";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import LotttieDog from "../../components/Lottie/LotttieDog";
+import shopData from "../../Data/shop.json";
 
 export const drawerWidth = () => {
   if (isMobile) {
