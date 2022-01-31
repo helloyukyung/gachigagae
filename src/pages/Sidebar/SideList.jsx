@@ -141,11 +141,11 @@ function SideList(props) {
                     <MSpan backgroundColor="#80ccff">🚗주차가능</MSpan>
                   )}
                   {!!shop.has_group_seat && (
-                    <MSpan backgroundColor="#71da71">👨‍👩‍👦‍👦단체석</MSpan>
+                    <MSpan backgroundColor="#71da71">👨‍👩‍👧‍👦단체석</MSpan>
                   )}
                   {!!shop.is_good_laptop && <MSpan>💻노트북</MSpan>}
                   {!!shop.large_dog_possible && (
-                    <MSpan backgroundColor="#ffff66">🐕대형견</MSpan>
+                    <MSpan backgroundColor="#ffff66">🦮대형견</MSpan>
                   )}
                 </div>
               </Info>

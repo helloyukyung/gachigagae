@@ -33,7 +33,7 @@ export default function NaverApiMap({
 
   return (
     <div>
-      <RenderAfterNavermapsLoaded clientId={"cc08dar8r4"}>
+      <RenderAfterNavermapsLoaded clientId={process.env.REACT_APP_CLIENT_ID}>
         <NaverMap
           id={"map"}
           mapDivId={"react-naver-map"}
