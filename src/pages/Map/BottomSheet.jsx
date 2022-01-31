@@ -50,7 +50,7 @@ export default function BottomSheet({ markerId }) {
   // loading & error hooks
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const shopListURL = `http://sulrae.com/api/shop/${markerId}`;
+  const shopListURL = `${process.env.REACT_APP_API}shop/${markerId}`;
   useEffect(() => {
     const fetchShopList = async () => {
       try {

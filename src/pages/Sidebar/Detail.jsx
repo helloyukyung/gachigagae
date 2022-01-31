@@ -32,7 +32,7 @@ export default function DetailList({
   // loading & error hooks
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const URL = `http://sulrae.com/api/shop/${isMarker ? markerId : getId}`;
+  const URL = `${process.env.REACT_APP_API}shop/${isMarker ? markerId : getId}`;
 
   //get detail Data
   useEffect(() => {

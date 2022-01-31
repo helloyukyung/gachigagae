@@ -19,7 +19,7 @@ export default function Map({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const shopListURL = "http://sulrae.com/api/shop/";
+  const shopListURL = `${process.env.REACT_APP_API}shop/`;
   useEffect(() => {
     const fetchShopList = async () => {
       try {

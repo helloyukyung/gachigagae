@@ -37,7 +37,7 @@ export default function Sidebar({
 
   const [getId, setGetId] = useState(null);
 
-  const shopListURL = "http://sulrae.com/api/shop/";
+  const shopListURL = `${process.env.REACT_APP_API}shop/`;
   //get shopList Data
   useEffect(() => {
     const fetchShopList = async () => {
