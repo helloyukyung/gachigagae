@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.js": "/gachigagae/static/js/main.b5462186.chunk.js",
-    "main.js.map": "/gachigagae/static/js/main.b5462186.chunk.js.map",
-    "runtime-main.js": "/gachigagae/static/js/runtime-main.bf155259.js",
-    "runtime-main.js.map": "/gachigagae/static/js/runtime-main.bf155259.js.map",
-    "static/js/2.e1e54ced.chunk.js": "/gachigagae/static/js/2.e1e54ced.chunk.js",
-    "static/js/2.e1e54ced.chunk.js.map": "/gachigagae/static/js/2.e1e54ced.chunk.js.map",
-    "static/js/3.c7951fe8.chunk.js": "/gachigagae/static/js/3.c7951fe8.chunk.js",
-    "static/js/3.c7951fe8.chunk.js.map": "/gachigagae/static/js/3.c7951fe8.chunk.js.map",
+    "main.js": "/gachigagae/static/js/main.cf3d0997.chunk.js",
+    "main.js.map": "/gachigagae/static/js/main.cf3d0997.chunk.js.map",
+    "runtime-main.js": "/gachigagae/static/js/runtime-main.020131ff.js",
+    "runtime-main.js.map": "/gachigagae/static/js/runtime-main.020131ff.js.map",
+    "static/js/2.874f2049.chunk.js": "/gachigagae/static/js/2.874f2049.chunk.js",
+    "static/js/2.874f2049.chunk.js.map": "/gachigagae/static/js/2.874f2049.chunk.js.map",
     "index.html": "/gachigagae/index.html",
-    "static/js/2.e1e54ced.chunk.js.LICENSE.txt": "/gachigagae/static/js/2.e1e54ced.chunk.js.LICENSE.txt"
+    "static/js/2.874f2049.chunk.js.LICENSE.txt": "/gachigagae/static/js/2.874f2049.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.bf155259.js",
-    "static/js/2.e1e54ced.chunk.js",
-    "static/js/main.b5462186.chunk.js"
+    "static/js/runtime-main.020131ff.js",
+    "static/js/2.874f2049.chunk.js",
+    "static/js/main.cf3d0997.chunk.js"
   ]
 }
