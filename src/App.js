@@ -30,21 +30,19 @@ function App() {
             <Header setClickDetail={setClickDetail} />
             <Routes>
               <Route
-                path="/"
+                path="/gachigagae/"
                 element={
-                  <Box sx={{ flexGrow: 1, p: 0 }}>
-                    <Map
-                      getDataForMarkers={getDataForMarkers}
-                      setMarkerId={setMarkerId}
-                      setClickDetail={setClickDetail}
-                      setIsMarker={setIsMarker}
-                      markerId={markerId}
-                    />
-                  </Box>
+                  <Map
+                    getDataForMarkers={getDataForMarkers}
+                    setMarkerId={setMarkerId}
+                    setClickDetail={setClickDetail}
+                    setIsMarker={setIsMarker}
+                    markerId={markerId}
+                  />
                 }
               />
               <Route
-                path="/list"
+                path="/gachigagae/list"
                 element={
                   <Sidebar
                     setGetDataForMarkers={setGetDataForMarkers}

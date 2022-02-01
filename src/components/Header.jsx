@@ -104,7 +104,7 @@ export default function Header({ setClickDetail, setIsMarker }) {
               <div className="icon">
                 <IconContext.Provider value={{ color: "white" }}>
                   {!iconShow ? (
-                    <Link to="/list">
+                    <Link to="/gachigagae/list">
                       <FaBars
                         onClick={() => {
                           setIconShow(true);
@@ -113,7 +113,7 @@ export default function Header({ setClickDetail, setIsMarker }) {
                       />
                     </Link>
                   ) : (
-                    <Link to="/">
+                    <Link to="/gachigagae/">
                       <CgClose
                         className="closeButton"
                         onClick={() => setIconShow(false)}
@@ -122,7 +122,7 @@ export default function Header({ setClickDetail, setIsMarker }) {
                   )}
                 </IconContext.Provider>
               </div>
-              <StyledLink to="/">
+              <StyledLink to="/gachigagae/">
                 <Main>같이가개🐶</Main>
               </StyledLink>
               <div className="MainVer">v 1.0</div>
