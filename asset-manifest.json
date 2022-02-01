@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/gachigagae/static/js/main.3c38097d.chunk.js",
-    "main.js.map": "/gachigagae/static/js/main.3c38097d.chunk.js.map",
+    "main.js": "/gachigagae/static/js/main.109433f9.chunk.js",
+    "main.js.map": "/gachigagae/static/js/main.109433f9.chunk.js.map",
     "runtime-main.js": "/gachigagae/static/js/runtime-main.020131ff.js",
     "runtime-main.js.map": "/gachigagae/static/js/runtime-main.020131ff.js.map",
     "static/js/2.f40d2f6f.chunk.js": "/gachigagae/static/js/2.f40d2f6f.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.020131ff.js",
     "static/js/2.f40d2f6f.chunk.js",
-    "static/js/main.3c38097d.chunk.js"
+    "static/js/main.109433f9.chunk.js"
   ]
 }
