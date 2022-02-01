@@ -15,6 +15,8 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
   width: 100%;
   height: 20%;
   .textLeft {
@@ -51,11 +53,12 @@ export const Container = styled.div`
 const MContainer = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
-  width: 100%;
-  height: 5rem;
+  width: 100vw;
+  height: 8vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   font-size: 3.5em;
   line-height: 5rem;
   .MainVer {
@@ -119,9 +122,8 @@ export default function Header({ setClickDetail, setIsMarker }) {
                   )}
                 </IconContext.Provider>
               </div>
-
               <StyledLink to="/">
-                <Main onClick={() => setIconShow(false)}>같이가개🐶</Main>
+                <Main>같이가개🐶</Main>
               </StyledLink>
               <div className="MainVer">v 1.0</div>
             </MContainer>
@@ -142,7 +144,9 @@ export default function Header({ setClickDetail, setIsMarker }) {
           >
             <Container>
               <div className="textLeft">
-                <div className="Main">같이가개🐶</div>
+                <div className="Main" onClick={() => setClickDetail(false)}>
+                  같이가개🐶
+                </div>
                 <div className="MainInfo">
                   <span style={{ color: "#60401f" }}>행궁동</span> 애견동반이
                   가능한 카페를 알려주는 서비스

@@ -34,7 +34,6 @@ export default function Sidebar({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   // to get detail
-
   const [getId, setGetId] = useState(null);
 
   const shopListURL = `${process.env.REACT_APP_API}shop/`;

@@ -53,18 +53,21 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  font-size: ${(props) => (props.Mobile ? "1.2em" : "21px")};
+  font-size: ${(props) => (props.Mobile ? "0.8em" : "21px")};
 `;
 export const InfoInfo = styled.div`
+  width: ${(props) => (props.Mobile ? "90vw" : "400px")};
+  height: ${(props) => props.Mobile || "60vh"};
   z-index: 10;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  left: ${(props) => (props.Mobile ? "2.6%" : "23px")};
+  font-size: 0.8em;
+  left: ${(props) => (props.Mobile ? "5vw" : "23px")};
   bottom: 0;
-  top: ${(props) => (props.Mobile ? "40em" : "15em")};
-  width: ${(props) => (props.Mobile ? "95%" : "400px")};
+  top: ${(props) => (props.Mobile ? "35vh" : "15em")};
+  padding-bottom: "10vh";
 
   background-color: white;
 `;
@@ -95,16 +98,23 @@ export const InstagramLink = styled.a`
 `;
 
 //Menu ver 2
+
+export const MTablediv = styled.div`
+  width: ${(props) => (props.Mobile ? "100%" : "400px")};
+  height: ${(props) => props.Mobile || "40vh"};
+  margin-bottom: ${(props) => (props.Bottom ? "10vh" : "20px")};
+`;
 export const Tablediv = styled.div`
   width: ${(props) => (props.Mobile ? "100%" : "400px")};
   height: auto;
-  margin-bottom: 20px;
+  padding-bottom: 5px;
 `;
+
 export const Table = styled.table`
-  border-collapse: collapse; // 선없애기
-  /* border-style: hidden; */
+  border-collapse: collapse;
   width: 80%;
   font-size: ${(props) => (props.Mobile ? "2.3em" : "20px")};
+
   .Menuheader {
     padding: 2px;
     padding-right: 5px;
@@ -143,8 +153,8 @@ export const MMenuDiv = styled.div`
 `;
 
 export const PhotoImg = styled.img`
-  width: ${(props) => (props.Mobile ? "100%" : "200px")};
-  height: ${(props) => (props.Mobile ? "50rem" : "200px")};
+  width: ${(props) => (props.Mobile ? "100vw" : "200px")};
+  height: ${(props) => (props.Mobile ? "40vh" : "200px")};
 `;
 
 export const MenuBadge = styled.span`
@@ -156,9 +166,9 @@ export const MenuBadge = styled.span`
 `;
 
 export const BottomCall = styled.div`
-  width: ${(props) => (props.Mobile ? "100%" : "450px")};
-  height: ${(props) => (props.Mobile ? "8%" : "60px")};
-  font-size: ${(props) => (props.Mobile ? "3.4em" : "35px")};
+  width: ${(props) => (props.Mobile ? "100vw" : "450px")};
+  height: ${(props) => (props.Mobile ? "7vh" : "60px")};
+  font-size: ${(props) => (props.Mobile ? "3em" : "35px")};
   text-align: center;
   background-color: #ff9966;
   position: fixed;

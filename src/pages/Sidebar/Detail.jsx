@@ -16,9 +16,11 @@ import {
   Tablediv,
   InfoInfo,
   MMenuDiv,
+  MTablediv,
 } from "./DetailStyled";
 import LotttieDog from "../../components/Lottie/LotttieDog";
 import Pictures from "../../components/Pictures";
+import StarIcon from "@mui/icons-material/Star";
 
 export default function DetailList({
   getId,
@@ -79,7 +81,7 @@ export default function DetailList({
             <StylesProvider injectFirst>
               <BackIcon
                 onClick={BacktoSideBar}
-                sx={{ color: "#ff9966", fontSize: "4em" }}
+                sx={{ color: "#ff9966", fontSize: "4em", paddingTop: "3vh" }}
               />
             </StylesProvider>
           </DetailNav>
@@ -106,7 +108,7 @@ export default function DetailList({
             </Info>
             <MMenuDiv>Menu</MMenuDiv>
             <Table Mobile>
-              <Tablediv Mobile>
+              <MTablediv Mobile>
                 <tr className="Menuheader">
                   <th>Coffee</th>
                   <th>Price</th>
@@ -131,10 +133,10 @@ export default function DetailList({
                     {menu.category === "coffee" ? <td> {menu.price}</td> : null}
                   </tr>
                 ))}
-              </Tablediv>
+              </MTablediv>
             </Table>
             <Table Mobile>
-              <Tablediv Mobile>
+              <MTablediv Mobile Bottom>
                 <tr className="Menuheader">
                   <th>Dessert</th>
                   <th>Price</th>
@@ -161,11 +163,9 @@ export default function DetailList({
                     ) : null}
                   </tr>
                 ))}
-              </Tablediv>
+              </MTablediv>
             </Table>
-            <br />
-            <br />
-            <br />
+
             <BottomCall Mobile onClick={Telphone}>
               전화해보개
             </BottomCall>
@@ -191,7 +191,7 @@ export default function DetailList({
                 <br />
               </div>
               {detail.score}.0
-              {"⭐".repeat(detail.score)}
+              {"⭐️".repeat(detail.score)}
               <br />
               {detail.address}
               <br />

@@ -66,8 +66,8 @@ export default function NaverApiMap({
                 icon={{
                   url: "https://i.ibb.co/JBMG7b9/marker.png",
                   size: { width: 80, height: 86 },
-                  scaledSize: { width: 90, height: 96 },
-                  anchor: { x: -40, y: 230 },
+                  scaledSize: { width: 90, height: 80 },
+                  anchor: { x: 30, y: 100 },
                 }}
               />
             ))}

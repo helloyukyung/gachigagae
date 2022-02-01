@@ -6,8 +6,8 @@ import { StylesProvider } from "@material-ui/core/styles";
 import styled from "styled-components";
 import { BrowserView, MobileView } from "react-device-detect";
 const MyCarousel = styled(Carousel)`
-  width: ${(props) => (props.Mobile ? "100%" : "450px")};
-  height: ${(props) => (props.Mobile ? "80%" : "300px")};
+  width: ${(props) => (props.Mobile ? "100vw" : "450px")};
+  height: ${(props) => (props.Mobile ? "40vh" : "300px")};
 `;
 
 export default function Pictures({ shop_id, images }) {

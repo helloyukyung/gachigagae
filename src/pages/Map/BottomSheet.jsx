@@ -7,12 +7,12 @@ import { LottieDogDiv } from "../Sidebar/DetailStyled";
 const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
-  width: 100%;
-  height: 30rem;
+  width: 100vw;
+  height: 30vh;
   display: flex;
   align-items: center;
-  padding: 0.5em;
-  font-size: 2.8em;
+  padding: 0.5vh;
+  font-size: 1.3em;
 `;
 
 const Info = styled.div`
@@ -20,8 +20,9 @@ const Info = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 70%;
-  height: 100%;
+  width: 100vw;
+  height: 23vh;
+
   .name-score {
     display: flex;
   }
@@ -32,10 +33,11 @@ const Info = styled.div`
 `;
 const Img = styled.img`
   border-radius: 10%;
+  width: 40vw;
+  height: 20vh;
 `;
 const Span = styled.span`
   color: #333333;
-  font-size: 0.9em;
   padding: 0.2em;
   margin: 0.2em;
   border-radius: 10%;
@@ -67,6 +69,8 @@ export default function BottomSheet({ markerId }) {
 
     fetchShopList();
   }, [markerId]);
+  console.log(bottomDetail);
+  console.log("markerId", markerId);
 
   if (loading)
     return (
@@ -82,12 +86,11 @@ export default function BottomSheet({ markerId }) {
     <>
       <Container>
         <Img
-          onClick={console.log("ge")}
           className="phoneImage"
           alt={bottomDetail.id}
-          src={bottomDetail.image1}
-          width="45%"
-          height="100%"
+          src={bottomDetail.images[0]}
+          width="40vw"
+          height="30vh"
         />
         <Info>
           <div className="info-up">

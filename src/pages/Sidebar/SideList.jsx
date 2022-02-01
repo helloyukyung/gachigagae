@@ -22,6 +22,15 @@ const Div = styled.div`
     }
   }
 `;
+const MYKBadge = styled.span`
+  color: #4775d1;
+  position: absolute;
+  font-size: 0.9em;
+  text-shadow: 3px 3px 3px black;
+  top: 10vh;
+  left: 8vw;
+  z-index: 1;
+`;
 
 const Span = styled.span`
   color: #333333;
@@ -47,10 +56,10 @@ const Img = styled.div`
   .YKbadge {
     color: #4775d1;
     position: absolute;
-    font-size: 25px;
+    font-size: 1.4em;
     text-shadow: 3px 3px 3px black;
     top: 118px;
-    left: 16px;
+    left: 27px;
   }
 `;
 //mobile
@@ -58,15 +67,17 @@ const MContainer = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
   width: 100%;
-  height: 20rem;
-  font-size: 2.5em;
-  padding: 0.4em;
-  border-bottom: 0.04em solid gray;
+  height: 100%;
+  font-size: 1.3em;
+  padding: 0.9vw;
+  /* border-bottom: 0.04em solid gray; */
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   .YKbadge {
     color: #0099cc;
     position: absolute;
-    font-size: 1.5em;
+    font-size: 1em;
     text-shadow: 3px 3px 3px black;
     top: 3.5em;
     left: 1.1em;
@@ -83,7 +94,7 @@ const Info = styled.div`
   flex-direction: column;
   justify-content: space-between;
   margin-left: 0.8em;
-
+  font-size: 1em;
   .name {
     font-weight: bold;
     font-size: 1.2em;
@@ -93,9 +104,12 @@ const Info = styled.div`
   }
   .badge {
     margin-bottom: 0.2em;
+    font-size: ${(props) => (props.mobilefont ? "1em" : "1em")};
   }
 `;
 const MImg = styled.img`
+  width: 30vw;
+  height: 12vh;
   border-radius: 5%;
 `;
 
@@ -113,16 +127,8 @@ function SideList(props) {
             key={shop.id}
           >
             <MContainer>
-              <MImg
-                className="phoneImage"
-                alt={shop.id}
-                src={shop.image1}
-                width="40%"
-                height="95%"
-              />
-              {!!shop.yk_certification && (
-                <span className="YKbadge">🙆‍♀️추천카페</span>
-              )}
+              <MImg className="phoneImage" alt={shop.id} src={shop.image1} />
+              {!!shop.yk_certification && <MYKBadge>🙆🏻‍♀️추천카페</MYKBadge>}
 
               <Info>
                 <div className="info-up">
@@ -134,9 +140,9 @@ function SideList(props) {
                   {shop.address_depth3}
                 </div>
                 <div className="badge">
-                  {!!shop.has_insta && (
+                  {/* {!!shop.has_insta && (
                     <MSpan backgroundColor="#ff80d5">🔥insta</MSpan>
-                  )}
+                  )} */}
                   {!!shop.has_parking_lot && (
                     <MSpan backgroundColor="#80ccff">🚗주차가능</MSpan>
                   )}
@@ -189,9 +195,9 @@ function SideList(props) {
                     <br />
                   </div>
                   <div className="badge">
-                    {!!shop.has_insta && (
+                    {/* {!!shop.has_insta && (
                       <Span backgroundColor="#ddb4cf">🔥insta</Span>
-                    )}
+                    )} */}
                     {!!shop.has_parking_lot && (
                       <Span backgroundColor="#80ccff">🚗주차가능</Span>
                     )}
