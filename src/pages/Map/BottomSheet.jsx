@@ -69,8 +69,6 @@ export default function BottomSheet({ markerId }) {
 
     fetchShopList();
   }, [markerId]);
-  console.log(bottomDetail);
-  console.log("markerId", markerId);
 
   if (loading)
     return (

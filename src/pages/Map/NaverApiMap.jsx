@@ -20,7 +20,6 @@ export default function NaverApiMap({
   const [state, setState] = useState(false);
 
   const toggleDrawer = (open) => (event) => {
-    console.log("toggle");
     setState(open);
   };
 

@@ -28,7 +28,6 @@ export default function Map({
         setLoading(true);
         const response = await axios.get(shopListURL);
         setMobileData(response.data);
-        console.log(mobileData);
       } catch (e) {
         setError(e);
       }
