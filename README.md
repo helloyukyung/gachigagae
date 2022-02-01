@@ -2,6 +2,8 @@
 
 <i>행궁동 주변 반려동물과 함께 입장이 가능한 카페를 알려주는 서비스</i>
 
+https://yukyung123.github.io/gachigagae/
+
 <br>
 
 ## 1. 진행 기간 및 인원
