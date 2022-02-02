@@ -35,7 +35,7 @@ export default function Map({
     };
 
     fetchShopList();
-  }, []);
+  }, [shopListURL]);
 
   if (loading)
     return (
@@ -52,29 +52,29 @@ export default function Map({
       <MobileView>
         <>
           <Toolbar />
-          <Typography>
-            <NaverApiMap
-              mobileData={mobileData}
-              setMarkerId={setMarkerId}
-              setClickDetail={setClickDetail}
-              setIsMarker={setIsMarker}
-              markerId={markerId}
-            ></NaverApiMap>
-          </Typography>
+          <NaverApiMap
+            mobileData={mobileData}
+            setMarkerId={setMarkerId}
+            setClickDetail={setClickDetail}
+            setIsMarker={setIsMarker}
+            markerId={markerId}
+          ></NaverApiMap>
+          {/* <Typography>
+
+          </Typography> */}
         </>
       </MobileView>
 
       <BrowserView>
         <>
           <Toolbar />
-          <Typography>
-            <NaverApiMap
-              getDataForMarkers={getDataForMarkers}
-              setMarkerId={setMarkerId}
-              setClickDetail={setClickDetail}
-              setIsMarker={setIsMarker}
-            ></NaverApiMap>
-          </Typography>
+          <NaverApiMap
+            getDataForMarkers={getDataForMarkers}
+            setMarkerId={setMarkerId}
+            setClickDetail={setClickDetail}
+            setIsMarker={setIsMarker}
+          ></NaverApiMap>
+          <Typography></Typography>
         </>
       </BrowserView>
     </>

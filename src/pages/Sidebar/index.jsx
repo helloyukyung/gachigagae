@@ -11,7 +11,6 @@ import Detail from "./Detail";
 import { StylesProvider } from "@material-ui/core/styles";
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import LotttieDog from "../../components/Lottie/LotttieDog";
-import shopData from "../../Data/shop.json";
 
 export const drawerWidth = () => {
   if (isMobile) {
@@ -36,8 +35,8 @@ export default function Sidebar({
   // to get detail
   const [getId, setGetId] = useState(null);
 
-  const shopListURL = `${process.env.REACT_APP_API}shop/`;
   //get shopList Data
+  const shopListURL = `${process.env.REACT_APP_API}shop/`;
   useEffect(() => {
     const fetchShopList = async () => {
       try {
@@ -54,7 +53,7 @@ export default function Sidebar({
     };
 
     fetchShopList();
-  }, [setGetDataForMarkers]);
+  }, [shopListURL, setGetDataForMarkers]);
 
   if (loading)
     return (
@@ -83,7 +82,7 @@ export default function Sidebar({
         >
           <Toolbar />
           {/* <Box sx={{ overflow: "auto" }}> */}
-          <StylesProvider injectFirst>
+          <StylesProvider>
             <MyBox>
               {clickDetail ? (
                 <Detail
@@ -119,7 +118,7 @@ export default function Sidebar({
         >
           <Toolbar />
           {/* <Box sx={{ overflow: "auto" }}> */}
-          <StylesProvider injectFirst>
+          <StylesProvider>
             <MyBox>
               {/* 컨텐츠 량에 따라 스크롤바를 추가할지 자동으로 결정*/}
               {clickDetail ? (

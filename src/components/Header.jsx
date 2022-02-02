@@ -3,11 +3,10 @@ import { BrowserView, MobileView } from "react-device-detect";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { CgClose } from "react-icons/cg";
 // import { TramRounded } from "@material-ui/icons";
-import { IconContext } from "react-icons";
 
 export const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
@@ -19,6 +18,7 @@ export const Container = styled.div`
 
   width: 100%;
   height: 20%;
+
   .textLeft {
     display: flex;
     flex-direction: row;
@@ -54,38 +54,38 @@ const MContainer = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
   width: 100vw;
-  height: 8vh;
+  height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 3.5em;
-  line-height: 5rem;
+
+  /* line-height: 5rem; */
   .MainVer {
-    font-size: 0.59em;
+    font-size: 20px;
+    height: 70px;
+    display: flex;
+
+    flex-direction: column-reverse;
     color: black;
-    padding-top: 0.5em;
-  }
-  .icon {
-    padding-top: 0.2em;
-    font-size: 1em;
-    .closeButton {
-      font-size: 1em;
-      font-weight: 1.5em;
-    }
   }
 `;
 const StyledLink = styled(Link)`
+  height: 70px;
   text-decoration: none;
   color: white;
+  display: flex;
+  align-items: center;
 `;
 const Main = styled.div`
-  padding-top: 0.1em;
+  font-size: 45px;
 `;
 
 export default function Header({ setClickDetail, setIsMarker }) {
   const [iconShow, setIconShow] = useState(false);
 
+  const navigate = useNavigate();
   return (
     <>
       <MobileView>
@@ -101,28 +101,28 @@ export default function Header({ setClickDetail, setIsMarker }) {
             }}
           >
             <MContainer>
-              <div className="icon">
-                <IconContext.Provider value={{ color: "white" }}>
-                  {!iconShow ? (
-                    <Link to="/gachigagae/list">
-                      <FaBars
-                        onClick={() => {
-                          setIconShow(true);
-                          setClickDetail(false);
-                        }}
-                      />
-                    </Link>
-                  ) : (
-                    <Link to="/gachigagae/">
-                      <CgClose
-                        className="closeButton"
-                        onClick={() => setIconShow(false)}
-                      />
-                    </Link>
-                  )}
-                </IconContext.Provider>
-              </div>
-              <StyledLink to="/gachigagae/">
+              {!iconShow ? (
+                <StyledLink to="/gachigagae/list">
+                  <FaBars
+                    size="45"
+                    style={{ color: "white" }}
+                    onClick={() => {
+                      setIconShow(true);
+                      setClickDetail(false);
+                    }}
+                  />
+                </StyledLink>
+              ) : (
+                <StyledLink to="/gachigagae/">
+                  <CgClose
+                    size="50"
+                    style={{ color: "white" }}
+                    className="closeButton"
+                    onClick={() => setIconShow(false)}
+                  />
+                </StyledLink>
+              )}
+              <StyledLink to="/gachigagae/" onClick={() => setIconShow(false)}>
                 <Main>같이가개🐶</Main>
               </StyledLink>
               <div className="MainVer">v 1.0</div>
@@ -144,7 +144,14 @@ export default function Header({ setClickDetail, setIsMarker }) {
           >
             <Container>
               <div className="textLeft">
-                <div className="Main" onClick={() => setClickDetail(false)}>
+                <div
+                  className="Main"
+                  onClick={() => {
+                    setClickDetail(false);
+                    navigate("/gachigagae/");
+                    window.location.reload();
+                  }}
+                >
                   같이가개🐶
                 </div>
                 <div className="MainInfo">

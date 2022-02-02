@@ -99,12 +99,11 @@ export const InstagramLink = styled.a`
 
 //Menu ver 2
 
-export const MTablediv = styled.div`
+export const MTablediv = styled.tbody`
   width: ${(props) => (props.Mobile ? "100%" : "400px")};
   height: ${(props) => props.Mobile || "40vh"};
-  margin-bottom: ${(props) => (props.Bottom ? "10vh" : "20px")};
 `;
-export const Tablediv = styled.div`
+export const Tablediv = styled.tbody`
   width: ${(props) => (props.Mobile ? "100%" : "400px")};
   height: auto;
   padding-bottom: 5px;
@@ -113,6 +112,7 @@ export const Tablediv = styled.div`
 export const Table = styled.table`
   border-collapse: collapse;
   width: 80%;
+
   font-size: ${(props) => (props.Mobile ? "2.3em" : "20px")};
 
   .Menuheader {
@@ -171,11 +171,12 @@ export const BottomCall = styled.div`
   font-size: ${(props) => (props.Mobile ? "3em" : "35px")};
   text-align: center;
   background-color: #ff9966;
-  position: fixed;
+  position: sticky;
   color: white;
-  left: 0px;
-  bottom: 0px;
+  /* left: 0; */
+  bottom: 0;
   padding-top: 15px;
+  padding-bottom: 15px;
   border-radius: 6px 6px 0 0;
   :hover {
     background-color: #ffe680;

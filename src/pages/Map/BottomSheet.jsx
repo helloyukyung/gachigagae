@@ -53,6 +53,7 @@ export default function BottomSheet({ markerId }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const shopListURL = `${process.env.REACT_APP_API}shop/${markerId}`;
+
   useEffect(() => {
     const fetchShopList = async () => {
       try {
@@ -68,7 +69,7 @@ export default function BottomSheet({ markerId }) {
     };
 
     fetchShopList();
-  }, [markerId]);
+  }, [shopListURL]);
 
   if (loading)
     return (

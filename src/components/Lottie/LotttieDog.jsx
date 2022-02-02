@@ -10,11 +10,11 @@ const lottieOptions = {
 
 export default function LotttieDog() {
   return (
-    <div>
+    <>
       <Lottie
         options={lottieOptions}
         style={{ width: "180px", height: "360px" }} // svg의 부모 div에 적용
       />
-    </div>
+    </>
   );
 }

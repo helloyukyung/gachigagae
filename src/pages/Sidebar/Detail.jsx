@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { BrowserView, MobileView } from "react-device-detect";
+import { BrowserView, isMobile, MobileView } from "react-device-detect";
 import { StylesProvider } from "@material-ui/core";
 import {
   Container,
@@ -17,10 +17,10 @@ import {
   InfoInfo,
   MMenuDiv,
   MTablediv,
+  TableBottom,
 } from "./DetailStyled";
 import LotttieDog from "../../components/Lottie/LotttieDog";
 import Pictures from "../../components/Pictures";
-import StarIcon from "@mui/icons-material/Star";
 
 export default function DetailList({
   getId,
@@ -58,9 +58,13 @@ export default function DetailList({
     setIsMarker(false);
   };
   const Telphone = () => {
-    detail.tel
-      ? alert(`매장 전화번호는 '${detail.tel}'이다개`)
-      : alert("매장번호가 없다개");
+    if (isMobile) {
+      return (window.location.href = `tel:${detail.tel}`);
+    } else {
+      detail.tel
+        ? alert(`매장 전화번호는 '${detail.tel}'이다개`)
+        : alert("매장번호가 없다개");
+    }
   };
 
   if (loading)
@@ -78,7 +82,7 @@ export default function DetailList({
       <MobileView>
         <Container key={detail.shop_id} Mobile>
           <DetailNav Mobile>
-            <StylesProvider injectFirst>
+            <StylesProvider>
               <BackIcon
                 onClick={BacktoSideBar}
                 sx={{ color: "#ff9966", fontSize: "4em", paddingTop: "3vh" }}
@@ -113,8 +117,8 @@ export default function DetailList({
                   <th>Coffee</th>
                   <th>Price</th>
                 </tr>
-                {detail.menu.map((menu) => (
-                  <tr className="Menuinfo">
+                {detail.menu.map((menu, key) => (
+                  <tr className="Menuinfo" key={key}>
                     {menu.category === "coffee" ? (
                       <td>
                         {menu.name}
@@ -141,8 +145,8 @@ export default function DetailList({
                   <th>Dessert</th>
                   <th>Price</th>
                 </tr>
-                {detail.menu.map((menu) => (
-                  <tr className="Menuinfo">
+                {detail.menu.map((menu, key) => (
+                  <tr className="Menuinfo" key={key}>
                     {menu.category === "dessert" ? (
                       <td>
                         {menu.name}
@@ -165,8 +169,7 @@ export default function DetailList({
                 ))}
               </MTablediv>
             </Table>
-
-            <BottomCall Mobile onClick={Telphone}>
+            <BottomCall Mobile onClick={() => Telphone()}>
               전화해보개
             </BottomCall>
           </InfoInfo>
@@ -175,7 +178,7 @@ export default function DetailList({
       <BrowserView>
         <Container key={detail.shop_id}>
           <DetailNav>
-            <StylesProvider injectFirst>
+            <StylesProvider>
               <BackIcon
                 onClick={BacktoSideBar}
                 sx={{ color: "#ff9966", fontSize: 36 }}
@@ -214,8 +217,8 @@ export default function DetailList({
                   <th>Coffee</th>
                   <th>Price</th>
                 </tr>
-                {detail.menu.map((menu) => (
-                  <tr className="Menuinfo">
+                {detail.menu.map((menu, key) => (
+                  <tr className="Menuinfo" key={key}>
                     {menu.category === "coffee" ? (
                       <td>
                         {menu.name}
@@ -238,8 +241,8 @@ export default function DetailList({
                   <th>Dessert</th>
                   <th>Price</th>
                 </tr>
-                {detail.menu.map((menu) => (
-                  <tr className="Menuinfo">
+                {detail.menu.map((menu, key) => (
+                  <tr className="Menuinfo" key={key}>
                     {menu.category === "dessert" ? (
                       <td>
                         {menu.name}
@@ -258,11 +261,6 @@ export default function DetailList({
                 ))}
               </Tablediv>
             </Table>
-
-            <br />
-            <br />
-            <br />
-
             <BottomCall onClick={Telphone}>전화해보개</BottomCall>
           </InfoInfo>
         </Container>

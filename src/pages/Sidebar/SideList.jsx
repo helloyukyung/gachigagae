@@ -25,7 +25,7 @@ const Div = styled.div`
 const MYKBadge = styled.span`
   color: #4775d1;
   position: absolute;
-  font-size: 0.9em;
+  font-size: 2vh;
   text-shadow: 3px 3px 3px black;
   top: 10vh;
   left: 8vw;
@@ -95,6 +95,7 @@ const Info = styled.div`
   justify-content: space-between;
   margin-left: 0.8em;
   font-size: 1em;
+
   .name {
     font-weight: bold;
     font-size: 1.2em;
@@ -108,15 +109,19 @@ const Info = styled.div`
   }
 `;
 const MImg = styled.img`
-  width: 30vw;
+  width: 140px;
   height: 12vh;
   border-radius: 5%;
+`;
+const MarginTopDiv = styled.div`
+  margin-top: 12px;
 `;
 
 function SideList(props) {
   return (
     <>
       <MobileView>
+        <MarginTopDiv />
         {props.shopList.map((shop) => (
           <ListItem
             button
@@ -124,7 +129,7 @@ function SideList(props) {
               props.setClickDetail(true);
               props.setGetId(shop.shop_id);
             }}
-            key={shop.id}
+            key={shop.shop_id}
           >
             <MContainer>
               <MImg className="phoneImage" alt={shop.id} src={shop.image1} />
@@ -161,14 +166,13 @@ function SideList(props) {
       </MobileView>
       <BrowserView>
         {props.shopList.map((shop) => (
-          <Container>
+          <Container key={shop.shop_id}>
             <ListItem
               button
               onClick={() => {
                 props.setClickDetail(true);
                 props.setGetId(shop.shop_id);
               }}
-              key={shop.id}
             >
               <Div>
                 <Img>

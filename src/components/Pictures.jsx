@@ -12,11 +12,11 @@ const MyCarousel = styled(Carousel)`
 
 export default function Pictures({ shop_id, images }) {
   return (
-    <StylesProvider injectFirst>
+    <StylesProvider>
       <MobileView>
         <MyCarousel Mobile>
-          {images?.map((img) => (
-            <Paper key={shop_id}>
+          {images?.map((img, key) => (
+            <Paper key={key}>
               <PhotoImg Mobile alt={shop_id} src={img} />
             </Paper>
           ))}
@@ -24,8 +24,8 @@ export default function Pictures({ shop_id, images }) {
       </MobileView>
       <BrowserView>
         <MyCarousel>
-          {images?.map((img) => (
-            <Paper>
+          {images?.map((img, key) => (
+            <Paper key={key}>
               <img alt={shop_id} src={img} width={"100%"} />
             </Paper>
           ))}

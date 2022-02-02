@@ -60,26 +60,35 @@ function App() {
       </MobileView>
       {/* web */}
       <BrowserView>
-        <Box>
-          <CssBaseline />
-          <Header setClickDetail={setClickDetail} setIsMarker={setIsMarker} />
-          <Box sx={{ flexGrow: 1, p: 0 }}>
-            <Sidebar
-              setGetDataForMarkers={setGetDataForMarkers}
-              markerId={markerId}
-              clickDetail={clickDetail}
-              setClickDetail={setClickDetail}
-              isMarker={isMarker}
-              setIsMarker={setIsMarker}
-            />
-            <Map
-              getDataForMarkers={getDataForMarkers}
-              setMarkerId={setMarkerId}
-              setClickDetail={setClickDetail}
-              setIsMarker={setIsMarker}
-            />
+        <Router>
+          <Box>
+            <CssBaseline />
+            <Header setClickDetail={setClickDetail} setIsMarker={setIsMarker} />
+            <Routes>
+              <Route
+                path="/gachigagae/"
+                element={
+                  <Box sx={{ flexGrow: 1, p: 0 }}>
+                    <Sidebar
+                      setGetDataForMarkers={setGetDataForMarkers}
+                      markerId={markerId}
+                      clickDetail={clickDetail}
+                      setClickDetail={setClickDetail}
+                      isMarker={isMarker}
+                      setIsMarker={setIsMarker}
+                    />
+                    <Map
+                      getDataForMarkers={getDataForMarkers}
+                      setMarkerId={setMarkerId}
+                      setClickDetail={setClickDetail}
+                      setIsMarker={setIsMarker}
+                    />
+                  </Box>
+                }
+              />
+            </Routes>
           </Box>
-        </Box>
+        </Router>
       </BrowserView>
     </>
   );

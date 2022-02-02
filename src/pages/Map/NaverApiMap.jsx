@@ -3,11 +3,8 @@ import React, { useState } from "react";
 import { RenderAfterNavermapsLoaded, NaverMap, Marker } from "react-naver-maps";
 import { BrowserView, MobileView } from "react-device-detect";
 import Drawer from "@mui/material/Drawer";
-import ListItem from "@mui/material/ListItem";
-import List from "@mui/material/List";
 
 import BottomSheet from "./BottomSheet";
-import { CloseFullscreenOutlined } from "@mui/icons-material";
 
 export default function NaverApiMap({
   mobileData,
@@ -74,7 +71,7 @@ export default function NaverApiMap({
               anchor={"bottom"}
               open={state}
               onClose={toggleDrawer(false)}
-              onOpen={toggleDrawer(true)}
+              // onOpen={toggleDrawer(true)}
             >
               <BottomSheet markerId={markerId} />
             </Drawer>
