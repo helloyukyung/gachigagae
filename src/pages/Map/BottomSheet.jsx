@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 import styled from "styled-components";
 import LotttieDog from "../../components/Lottie/LotttieDog";
 import { LottieDogDiv } from "../Sidebar/DetailStyled";
@@ -13,7 +13,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   padding: 0.5vh;
-  padding-top: 0vh;
+
   font-size: 1.3em;
 `;
 
@@ -26,7 +26,7 @@ const Info = styled.div`
   width: 100vw;
   height: 25vh;
   font-size: 19px;
-  padding-top: 1vh;
+  padding-top: 2vh;
   padding-bottom: 2vh;
 
   .name-score {
@@ -65,8 +65,6 @@ export default function BottomSheet({ markerId }) {
   const [error, setError] = useState(null);
   const shopListURL = `${process.env.REACT_APP_API}shop/${markerId}`;
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     const fetchShopList = async () => {
       try {
@@ -96,7 +94,6 @@ export default function BottomSheet({ markerId }) {
 
   return (
     <>
-      )
       <Container>
         <Img
           className="phoneImage"
