@@ -111,7 +111,7 @@ export default function BottomSheet({ markerId }) {
             <div
               className="address"
               style={{
-                width: "250px",
+                width: "190px",
                 whiteSpace: "noWrap",
                 overflow: "hidden",
                 textOverflow: "ellipsis",
@@ -123,9 +123,6 @@ export default function BottomSheet({ markerId }) {
             </div>
           </div>
           <div className="badge">
-            {!!bottomDetail.has_insta && (
-              <Span backgroundColor="#ff80d5">🔥insta</Span>
-            )}
             {!!bottomDetail.has_parking_lot && (
               <Span backgroundColor="#80ccff">🚗주차가능</Span>
             )}
