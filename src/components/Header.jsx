@@ -122,7 +122,14 @@ export default function Header({ setClickDetail, setIsMarker }) {
                   />
                 </StyledLink>
               )}
-              <StyledLink to="/gachigagae/" onClick={() => setIconShow(false)}>
+              <StyledLink
+                to="/gachigagae/"
+                onClick={() => {
+                  setIconShow(false);
+                  navigate("/gachigagae/");
+                  window.location.reload();
+                }}
+              >
                 <Main>같이가개🐶</Main>
               </StyledLink>
               <div className="MainVer">v 1.0</div>
