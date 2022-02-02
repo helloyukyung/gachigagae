@@ -84,10 +84,6 @@ export default function BottomSheet({ markerId }) {
     fetchShopList();
   }, [shopListURL]);
 
-  const onClickBottomSheet = () => {
-    navigate("gachigagae/detail", { names: ["Brent", "Satya", "Michaś"] });
-  };
-
   if (loading)
     return (
       <LottieDogDiv>
@@ -101,7 +97,7 @@ export default function BottomSheet({ markerId }) {
   return (
     <>
       )
-      <Container onClick={() => onClickBottomSheet()}>
+      <Container>
         <Img
           className="phoneImage"
           alt={bottomDetail.id}
