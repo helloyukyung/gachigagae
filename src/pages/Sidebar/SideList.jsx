@@ -25,9 +25,9 @@ const Div = styled.div`
 const MYKBadge = styled.span`
   color: #4775d1;
   position: absolute;
-  font-size: 2vh;
+  font-size: 2.8vh;
   text-shadow: 3px 3px 3px black;
-  top: 10vh;
+  top: 12vh;
   left: 8vw;
   z-index: 1;
 `;
@@ -79,8 +79,6 @@ const MContainer = styled.div`
     position: absolute;
     font-size: 1em;
     text-shadow: 3px 3px 3px black;
-    top: 3.5em;
-    left: 1.1em;
   }
 `;
 const MSpan = styled(Span)`
@@ -88,7 +86,7 @@ const MSpan = styled(Span)`
 `;
 
 const Info = styled.div`
-  width: 70%;
+  width: 60vw;
   height: border-box;
   display: flex;
   flex-direction: column;
@@ -109,8 +107,8 @@ const Info = styled.div`
   }
 `;
 const MImg = styled.img`
-  width: 140px;
-  height: 12vh;
+  width: 30vw;
+  height: 15vh;
   border-radius: 5%;
 `;
 const MarginTopDiv = styled.div`
@@ -140,9 +138,17 @@ function SideList(props) {
                   <div className="name-score">
                     <div className="name">{shop.name}</div>⭐{shop.score}.0
                   </div>
-                  {shop.address_depth1}&nbsp;
-                  {shop.address_depth2}&nbsp;
-                  {shop.address_depth3}
+                  <p
+                    style={{
+                      width: "50vw",
+                      overflow: "hidden",
+                      whiteSpace: "noWrap",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {shop.address_depth1} {shop.address_depth2}{" "}
+                    {shop.address_depth3}
+                  </p>
                 </div>
                 <div className="badge">
                   {/* {!!shop.has_insta && (

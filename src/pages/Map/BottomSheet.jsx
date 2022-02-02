@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import LotttieDog from "../../components/Lottie/LotttieDog";
 import { LottieDogDiv } from "../Sidebar/DetailStyled";
@@ -8,10 +9,11 @@ const Container = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
   font-family: "Jua", sans-serif;
   width: 100vw;
-  height: 30vh;
+  height: 25vh;
   display: flex;
   align-items: center;
   padding: 0.5vh;
+  padding-top: 0vh;
   font-size: 1.3em;
 `;
 
@@ -19,9 +21,13 @@ const Info = styled.div`
   margin-left: 1em;
   display: flex;
   flex-direction: column;
+
   justify-content: space-between;
   width: 100vw;
-  height: 23vh;
+  height: 25vh;
+  font-size: 19px;
+  padding-top: 1vh;
+  padding-bottom: 2vh;
 
   .name-score {
     display: flex;
@@ -46,6 +52,11 @@ const Span = styled.span`
   white-space: nowrap;
 `;
 
+const StarIcon = styled.div`
+  display: flex;
+  justify-content: end;
+`;
+
 export default function BottomSheet({ markerId }) {
   // shopList Data
   const [bottomDetail, setBottomDetail] = useState(null);
@@ -53,6 +64,8 @@ export default function BottomSheet({ markerId }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const shopListURL = `${process.env.REACT_APP_API}shop/${markerId}`;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchShopList = async () => {
@@ -71,6 +84,10 @@ export default function BottomSheet({ markerId }) {
     fetchShopList();
   }, [shopListURL]);
 
+  const onClickBottomSheet = () => {
+    navigate("gachigagae/detail", { names: ["Brent", "Satya", "Michaś"] });
+  };
+
   if (loading)
     return (
       <LottieDogDiv>
@@ -83,7 +100,8 @@ export default function BottomSheet({ markerId }) {
 
   return (
     <>
-      <Container>
+      )
+      <Container onClick={() => onClickBottomSheet()}>
         <Img
           className="phoneImage"
           alt={bottomDetail.id}
@@ -94,10 +112,18 @@ export default function BottomSheet({ markerId }) {
         <Info>
           <div className="info-up">
             <div className="name-score">
-              <div className="name">{bottomDetail.name}</div>⭐
-              {bottomDetail.score}.0
+              <div className="name">{bottomDetail.name}</div>
+              <StarIcon> ⭐️ {bottomDetail.score}.0</StarIcon>
             </div>
-            <div className="address">
+            <div
+              className="address"
+              style={{
+                width: "250px",
+                whiteSpace: "noWrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
               {bottomDetail.address_depth1}&nbsp;
               {bottomDetail.address_depth2}&nbsp;
               {bottomDetail.address_depth3}

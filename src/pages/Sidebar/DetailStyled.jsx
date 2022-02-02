@@ -172,7 +172,6 @@ export const MobileBottomCallDiv = styled.div`
   background-color: #ff9966;
   position: sticky;
   color: white;
-  left: 0;
   bottom: 0;
   padding-top: 15px;
   padding-bottom: 15px;

@@ -62,7 +62,7 @@ export default function NaverApiMap({
                 icon={{
                   url: "https://i.ibb.co/JBMG7b9/marker.png",
                   size: { width: 80, height: 86 },
-                  scaledSize: { width: 90, height: 80 },
+                  scaledSize: { width: 70, height: 60 },
                   anchor: { x: 30, y: 100 },
                 }}
               />
@@ -73,7 +73,12 @@ export default function NaverApiMap({
               onClose={toggleDrawer(false)}
               // onOpen={toggleDrawer(true)}
             >
-              <BottomSheet markerId={markerId} />
+              <BottomSheet
+                markerId={markerId}
+                setClickDetail={setClickDetail}
+                setIsMarker={setIsMarker}
+                setMarkerId={setMarkerId}
+              />
             </Drawer>
           </MobileView>
           <BrowserView>

@@ -17,7 +17,7 @@ import {
   InfoInfo,
   MMenuDiv,
   MTablediv,
-  TableBottom,
+  MobileBottomCallDiv,
 } from "./DetailStyled";
 import LotttieDog from "../../components/Lottie/LotttieDog";
 import Pictures from "../../components/Pictures";
@@ -35,7 +35,7 @@ export default function DetailList({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const URL = `${process.env.REACT_APP_API}shop/${isMarker ? markerId : getId}`;
-
+  console.log(getId, markerId, isMarker);
   //get detail Data
   useEffect(() => {
     const fetchShops = async () => {
@@ -169,9 +169,9 @@ export default function DetailList({
                 ))}
               </MTablediv>
             </Table>
-            <BottomCall Mobile onClick={() => Telphone()}>
+            <MobileBottomCallDiv Mobile onClick={() => Telphone()}>
               전화해보개
-            </BottomCall>
+            </MobileBottomCallDiv>
           </InfoInfo>
         </Container>
       </MobileView>
