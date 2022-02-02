@@ -164,6 +164,25 @@ export const MenuBadge = styled.span`
   border-radius: 6px;
   background-color: ${(props) => props.color || "lightgray"};
 `;
+export const MobileBottomCallDiv = styled.div`
+  width: 100vw;
+  height: 7vh;
+  font-size: 3em;
+  text-align: center;
+  background-color: #ff9966;
+  position: sticky;
+  color: white;
+  left: 0;
+  bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 6px 6px 0 0;
+  :hover {
+    background-color: #ffe680;
+    color: black;
+    cursor: pointer;
+  }
+`;
 
 export const BottomCall = styled.div`
   width: ${(props) => (props.Mobile ? "100vw" : "450px")};
@@ -171,13 +190,14 @@ export const BottomCall = styled.div`
   font-size: ${(props) => (props.Mobile ? "3em" : "35px")};
   text-align: center;
   background-color: #ff9966;
-  position: sticky;
+  position: fixed;
   color: white;
-  /* left: 0; */
+  left: 0;
   bottom: 0;
   padding-top: 15px;
   padding-bottom: 15px;
   border-radius: 6px 6px 0 0;
+
   :hover {
     background-color: #ffe680;
     color: black;
