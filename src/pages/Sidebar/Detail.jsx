@@ -57,7 +57,7 @@ export default function DetailList({
     setClickDetail(false);
     setIsMarker(false);
   };
-  const Telphone = () => {
+  const onClickCallButtonHandler = () => {
     if (isMobile) {
       return (window.location.href = `tel:${detail.tel}`);
     } else {
@@ -169,7 +169,10 @@ export default function DetailList({
                 ))}
               </MTablediv>
             </Table>
-            <MobileBottomCallDiv Mobile onClick={() => Telphone()}>
+            <MobileBottomCallDiv
+              Mobile
+              onClick={() => onClickCallButtonHandler()}
+            >
               전화해보개
             </MobileBottomCallDiv>
           </InfoInfo>
@@ -261,7 +264,9 @@ export default function DetailList({
                 ))}
               </Tablediv>
             </Table>
-            <BottomCall onClick={Telphone}>전화해보개</BottomCall>
+            <BottomCall onClick={() => onClickCallButtonHandler()}>
+              전화해보개
+            </BottomCall>
           </InfoInfo>
         </Container>
       </BrowserView>
