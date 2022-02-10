@@ -189,7 +189,7 @@ export const BottomCall = styled.div`
   font-size: ${(props) => (props.Mobile ? "3em" : "35px")};
   text-align: center;
   background-color: #ff9966;
-  position: fixed;
+  position: sticky;
   color: white;
   left: 0;
   bottom: 0;
